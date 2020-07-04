@@ -1,0 +1,33 @@
+header {
+    background: linear-gradient(#63E651, #42753E);
+    display: flex;
+    align-items: stretch;
+}
+
+header nav {
+    flex-grow: 1;
+    text-align: right;
+    display: flex;
+    align-items: flex-end;
+}
+
+header nav ul {
+    flex-grow: 1;
+    padding: 0 1rem 0 0;
+    align-self: flex-end;
+}
+
+header nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+header nav ul li a:hover {
+    color: white;
+}
