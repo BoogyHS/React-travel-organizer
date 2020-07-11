@@ -4,8 +4,9 @@
 @import url('header.css');
 @import url('footer.css');
 @import url('responsive.css');
-@import url('register.css');
-@import url('login.css');
+@import url('user-sign-form.css');
+@import url('hotel-form.css');
+@import url('cards.css');
 
 body {
     max-width: 1366px;
@@ -19,8 +20,8 @@ body {
 .wrapper {
     /* margin-top: 1rem; */
     /* display: flex; */
-    padding: 1rem;
-    padding-top: 6rem;
+    padding: 4rem 1rem 0 1rem;
+    padding-top: 4rem;
 }
 
 main {

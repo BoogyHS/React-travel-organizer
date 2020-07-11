@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Parisienne&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3cd69e2433.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
@@ -14,43 +16,43 @@
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
         <ul class="menu">
-            <li><a href="#">Home</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Register</a></li>
-                <li><a href="#">Logout</a></li>
-                <li><a href="#">Add Hotel</a></li>
-                <li><a href="#">Add Flight</a></li>
-                <li><a href="#">See Information</a></li>
+            <li><a href="#">Начало</a></li>
+            <li><a href="#">Вход</a></li>
+            <li><a href="#">Регистрация</a></li>
+            <li><a href="#">Изход</a></li>
+            <li><a href="#">Хотел</a></li>
+            <li><a href="#">Полет</a></li>
+            <li><a href="#">Информация</a></li>
         </ul>
     </header>
     <div class="wrapper">
         <main>
-            <div class="register">
-                <h3>Create your account</h3>
-                <form id="reg-form">
+            <div class="user-sign-form">
+                <h3>Направете регистрация</h3>
+                <form id="sign-form">
                     <div>
-                        <label for="name">Name</label>
-                        <input type="text" id="name" spellcheck="false" placeholder="John Doe" />
+                        <label for="name">Име</label>
+                        <input type="text" id="name" spellcheck="false" placeholder="Bozhidar Atanasov" />
                     </div>
                     <div>
-                        <label for="email">Email</label>
-                        <input type="text" id="email" spellcheck="false" placeholder="john.doe@gmail.com" />
+                        <label for="email">Е-мейл</label>
+                        <input type="text" id="email" spellcheck="false" placeholder="boogy.hs@gmail.com" />
                     </div>
                     <div>
-                        <label for="username">Username</label>
-                        <input type="text" id="username" spellcheck="false" placeholder="johny" />
+                        <label for="username">Потребителско име</label>
+                        <input type="text" id="username" spellcheck="false" placeholder="Boogy" />
                     </div>
                     <div>
-                        <label for="password">Password</label>
-                        <input type="password" id="password" />
+                        <label for="password">Парола</label>
+                        <input type="password" id="password" placeholder="*****"/>
                     </div>
                     <div>
-                        <label for="repeat-password">Repeat Password</label>
-                        <input type="password" id="repeat-password" />
+                        <label for="repeat-password">Повторете паролата</label>
+                        <input type="password" id="repeat-password" placeholder="*****"/>
                     </div>
                     <div>
                         <label></label>
-                        <input type="submit" value="Create Account" id="register" class="button" />
+                        <input type="submit" value="Регистрация" id="register" class="button" />
                     </div>
                 </form>
             </div>

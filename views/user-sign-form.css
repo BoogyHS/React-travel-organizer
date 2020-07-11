@@ -1,4 +1,4 @@
-.register {
+.user-sign-form {
     width: 100%;
     max-width: 500px;
     margin: 2rem auto;
@@ -11,7 +11,7 @@
     box-shadow: 0 0 1rem 0 #000000;
 }
 
-.register h3 {
+.user-sign-form h3 {
     margin: 0 15px 20px;
     border-bottom: 2px solid #72b372;
     padding: 5px 10px 5px 0;
@@ -19,20 +19,20 @@
     text-align: center;
 }
 
-.register div {
+.user-sign-form div {
     margin: 0 0 15px 0;
     border: none;
 }
 
-.register label {
+.user-sign-form label {
     display: inline-block;
-    width: 25%;
+    width: 30%;
     text-align: right;
     margin: 10px
 }
 
-.register input[type=text], input[type=password] {
-    width: 65%;
+.user-sign-form input[type=text], input[type=password] {
+    width: 60%;
     font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
     padding: 5px;
     font-size: 0.9em;
@@ -40,11 +40,11 @@
     background: rgba(0, 0, 0, 0.07);
 }
 
-.register input[type=text]:focus, input[type=password]:focus {
+.user-sign-form input[type=text]:focus, input[type=password]:focus {
     background: #FFFFFF;
 }
 
-.register .button {
+.user-sign-form .button {
     font-size: 1em;
     border-radius: 8px;
     padding: 10px;
@@ -53,17 +53,17 @@
     background: linear-gradient(#63E651, #42753E);
 }
 
-.register .button:hover {
+.user-sign-form .button:hover {
     background: linear-gradient(#51DB1C, #6BA061);
 }
 
-.register .sep {
+.user-sign-form .sep {
     border: 1px solid green;
     position: relative;
     margin: 35px 20px;
 }
 
-.register .or {
+.user-sign-form .or {
     position: absolute;
     width: 50px;
     left: 50%;
@@ -73,14 +73,14 @@
     line-height: 20px;
 }
 
-.register .connect {
+.user-sign-form .connect {
     width: 400px;
     margin: 0 auto;
     text-align: center;
 }
 
 /* 
-.register .social-buttons {
+.user-sign-form .social-buttons {
     display: inline-block;
     min-width: 150px;
     height: 50px;
@@ -89,7 +89,7 @@
     text-shadow: 1px 1px 5px #000000;
 }
 
-.register .social-buttons a {
+.user-sign-form .social-buttons a {
     display: block;
     height: 100%;
     text-decoration: none;
@@ -97,20 +97,20 @@
     padding: 10px 15px;
 }
 
-.register .social-buttons span {
+.user-sign-form .social-buttons span {
     font-size: 30px;
     margin-left: 35px;
 }
 
-.register .facebook {
+.user-sign-form .facebook {
     background: linear-gradient(#415EA3, #2E4A88);
 }
 
-.register .facebook:hover {
+.user-sign-form .facebook:hover {
     background: linear-gradient(#3B5591, #2A437C);
 }
 
-.register .facebook a {
+.user-sign-form .facebook a {
     background: url(../images/logo_fb_31x42.png) no-repeat 5% 10%;
 } */
 
@@ -133,7 +133,7 @@ $green-border: #72B372;
   margin-top: 10px;
 }
 .two{
-    .register {
+    .user-sign-form {
        border: none; 
         
         h3 {
@@ -145,7 +145,7 @@ $green-border: #72B372;
         }
     }
 }
-.register {
+.user-sign-form {
   	width: 500px;
   	margin: 10px auto;
   	padding: 10px;
