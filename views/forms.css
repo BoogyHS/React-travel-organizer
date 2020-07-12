@@ -11,7 +11,7 @@
     box-shadow: 0 0 1rem 0 #000000;
 }
 
-.wrapper h3 {
+.wrapper .wrapper-form h3 {
     margin: 0 0.8rem 1rem;
     border-bottom: 0.2rem solid #72b372;
     padding: 0.3rem 0.5rem 0.3rem 0;

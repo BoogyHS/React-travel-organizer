@@ -1,0 +1,17 @@
+.home-card-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.home-card {
+    flex-basis: 30%;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.home-card h2 {
+    padding: 0;
+}

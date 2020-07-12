@@ -6,12 +6,15 @@
 @import url('responsive.css');
 @import url('forms.css');
 @import url('cards.css');
+@import url('home.css');
 
 body {
     max-width: 1366px;
     margin: auto;
     position: relative;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* main  */
@@ -19,8 +22,16 @@ body {
 .wrapper {
     padding: 4rem 1rem 0 1rem;
     padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 main {
     flex-basis: 70%;
+}
+
+a {
+    text-decoration: none;
 }
