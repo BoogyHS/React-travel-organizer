@@ -4,8 +4,9 @@
 @import url('header.css');
 @import url('footer.css');
 @import url('responsive.css');
-@import url('user-sign-form.css');
-@import url('hotel-form.css');
+@import url('forms.css');
+/* @import url('user-sign-form.css');
+@import url('hotel-form.css'); */
 @import url('cards.css');
 
 body {
