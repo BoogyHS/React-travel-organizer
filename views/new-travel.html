@@ -20,8 +20,7 @@
             <li><a href="#">Вход</a></li>
             <li><a href="#">Регистрация</a></li>
             <li><a href="#">Изход</a></li>
-            <li><a href="#">Хотел</a></li>
-            <li><a href="#">Полет</a></li>
+            <li><a href="#">Ново пътуване</a></li>
             <li><a href="#">Информация</a></li>
         </ul>
     </header>
@@ -29,30 +28,22 @@
         <main>
             <div class="wrapper-form">
                 <h3>Ново пътуване</h3>
-                <form id="sign-form">
+                <form id="new-travel-form">
                     <div>
-                        <label for="name">Име</label>
-                        <input type="text" id="name" spellcheck="false" placeholder="Bozhidar Atanasov" />
+                        <label for="travel-name">Име</label>
+                        <input type="text" id="travel-name" spellcheck="false" placeholder="New Zealand 2018" />
                     </div>
                     <div>
-                        <label for="email">Е-мейл</label>
-                        <input type="text" id="email" spellcheck="false" placeholder="boogy.hs@gmail.com" />
+                        <label for="start-date">Дата на заминаване</label>
+                        <input type="date" id="start-date" />
                     </div>
                     <div>
-                        <label for="username">Потребителско име</label>
-                        <input type="text" id="username" spellcheck="false" placeholder="Boogy" />
-                    </div>
-                    <div>
-                        <label for="password">Парола</label>
-                        <input type="password" id="password" placeholder="*****"/>
-                    </div>
-                    <div>
-                        <label for="repeat-password">Повторете паролата</label>
-                        <input type="password" id="repeat-password" placeholder="*****"/>
+                        <label for="end-date">Дата на връщане</label>
+                        <input type="date" id="end-date" />
                     </div>
                     <div>
                         <label></label>
-                        <input type="submit" value="Регистрация" id="register" class="button" />
+                        <input type="submit" value="Създай" id="new-travel-button" class="button" />
                     </div>
                 </form>
             </div>
