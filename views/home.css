@@ -4,6 +4,11 @@
     align-items: stretch;
 }
 
+.home-card.card {
+    display: flex;
+    justify-content: center;
+}
+
 .home-card {
     flex-basis: 30%;
     padding: 1rem;
