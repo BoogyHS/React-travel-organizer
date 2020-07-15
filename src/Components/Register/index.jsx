@@ -9,28 +9,28 @@ function Register() {
             <h3>Направете регистрация</h3>
             <form id="sign-form">
                 <div>
-                    <label for="name">Име</label>
-                    <input type="text" id="name" spellcheck="false" placeholder="Bozhidar Atanasov" />
+                    <label htmlFor="name">Име</label>
+                    <input type="text" id="name" spellCheck="false" placeholder="Bozhidar Atanasov" />
                 </div>
                 <div>
-                    <label for="email">Е-мейл</label>
-                    <input type="text" id="email" spellcheck="false" placeholder="boogy.hs@gmail.com" />
+                    <label htmlFor="email">Е-мейл</label>
+                    <input type="text" id="email" spellCheck="false" placeholder="boogy.hs@gmail.com" />
                 </div>
                 <div>
-                    <label for="username">Потребителско име</label>
-                    <input type="text" id="username" spellcheck="false" placeholder="Boogy" />
+                    <label htmlFor="username">Потребителско име</label>
+                    <input type="text" id="username" spellCheck="false" placeholder="Boogy" />
                 </div>
                 <div>
-                    <label for="password">Парола</label>
+                    <label htmlFor="password">Парола</label>
                     <input type="password" id="password" placeholder="*****" />
                 </div>
                 <div>
-                    <label for="repeat-password">Повторете паролата</label>
+                    <label htmlFor="repeat-password">Повторете паролата</label>
                     <input type="password" id="repeat-password" placeholder="*****" />
                 </div>
                 <div>
                     <label></label>
-                    <FormButton text="Регистрация" id="register"></FormButton>
+                    <FormButton value="Регистрация" id="register-button"></FormButton>
                 </div>
             </form>
         </FormWrapper>
