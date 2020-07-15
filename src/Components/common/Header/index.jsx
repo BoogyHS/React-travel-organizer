@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from '../common/Link'
+import Link from '../Link'
 import styles from './style.module.css'
 
 function Header() {

@@ -1,0 +1,12 @@
+.wrapper {
+    padding: 4rem 1rem 0 1rem;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+main {
+    flex-basis: 70%;
+}

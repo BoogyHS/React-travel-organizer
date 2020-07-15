@@ -1,5 +1,5 @@
 html {
-    font: 18px/1.5 Verdana, sans-serif;
+    font: 15px/1.5 Verdana, sans-serif;
 }
 
 body, form, input, textarea, option, select, button {
@@ -14,9 +14,9 @@ ul, ol {
     padding-left: 2.5em;
 }
 
-blockquote, h1, h2, h3, h4, h5, h6 {
+/* blockquote, h1, h2, h3, h4, h5, h6 {
     font-family: Georgia, serif;
-}
+} */
 
 h1, h2, h3, h4, h5, h6 {
     padding-bottom: 0.5rem;
