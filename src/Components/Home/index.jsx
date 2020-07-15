@@ -2,9 +2,13 @@ import React from 'react';
 import Link from '../common/Link'
 import styles from './style.module.css'
 
-function Home(){
-    return (
-        <div className={styles["home-card-wrapper"]}>
+// const loggedTextContentArr = ['Ново пътуване', 'Моите пътувания', 'Статистика'];
+
+function Home(props) {
+
+    if (props.loggedIn) {
+        return (
+            <div className={styles["home-card-wrapper"]}>
                 <Link to="/new-travel" className={`${styles["home-card"]} ${styles["card"]}`}>
                     <div>
                         <h2>Ново пътуване</h2>
@@ -21,7 +25,23 @@ function Home(){
                     </div>
                 </Link>
             </div>
-    )
+        )
+    } else {
+        return (
+            <div className={styles["home-card-wrapper"]}>
+                <Link to="/register" className={`${styles["home-card"]} ${styles["card"]}`}>
+                    <div>
+                        <h2>Регистрация</h2>
+                    </div>
+                </Link>
+                <Link to="/login" className={`${styles["home-card"]} ${styles["card"]}`}>
+                    <div>
+                        <h2>Вход</h2>
+                    </div>
+                </Link>
+            </div>
+        )
+    }
 }
 
 export default Home;
