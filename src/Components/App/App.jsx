@@ -10,6 +10,7 @@ import Register from '../Register';
 import Login from '../Login';
 import NewTravel from '../NewTravel';
 import HotelForm from '../Hotel';
+import FlightForm from '../Flight';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
               <Route path="/new-travel" render={NewTravel} />
               <Route path="/statistics" render={Home} />
               <Route path="/hotel-form" render={HotelForm} />
+              <Route path="/flight-form" render={FlightForm} />
               <Route path="/my-travels" render={Home} />
             </Switch>
           </main>

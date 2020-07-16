@@ -6,7 +6,7 @@ import TextArea from '../common/TextArea'
 function HotelForm() {
     return (
         <FormWrapper>
-            <h3>Запази хотел</h3>
+            <h3>Добави хотел</h3>
             <form id="hotel-form">
                 <div>
                     <label htmlFor="country">Държава</label>
