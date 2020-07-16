@@ -9,6 +9,7 @@ import Home from '../Home'
 import Register from '../Register';
 import Login from '../Login';
 import NewTravel from '../NewTravel';
+import HotelForm from '../Hotel';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
               <Route path="/login" render={Login} />
               <Route path="/new-travel" render={NewTravel} />
               <Route path="/statistics" render={Home} />
+              <Route path="/hotel-form" render={HotelForm} />
               <Route path="/my-travels" render={Home} />
             </Switch>
           </main>
