@@ -1,8 +1,13 @@
 import React from 'react'
 import FormWrapper from '../common/FormWrapper'
 import FormButton from '../common/FormButton'
+// import testService from '../../Services/testservice/test.js'
 
 function Register() {
+    // function handleFunc(ev) {
+    //     ev.preventDefault()
+    //     return testService.load()
+    // }
 
     return (
         <FormWrapper>
@@ -30,6 +35,7 @@ function Register() {
                 </div>
                 <div>
                     <label></label>
+                    {/*<button onClick={handleFunc}>click</button>*/}
                     <FormButton value="Регистрация" id="register-button"></FormButton>
                 </div>
             </form>
