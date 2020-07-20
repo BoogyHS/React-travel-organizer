@@ -1,13 +1,29 @@
 import React from 'react'
 import FormWrapper from '../common/FormWrapper'
 import FormButton from '../common/FormButton'
-// import testService from '../../Services/testservice/test.js'
+import testService from '../../Services/testservice/test.js'
 
 function Register() {
-    // function handleFunc(ev) {
-    //     ev.preventDefault()
-    //     return testService.load()
-    // }
+    function handleFunc(ev) {
+        ev.preventDefault()
+        return testService.logout()
+    }
+    function handleFuncReg(ev) {
+        ev.preventDefault()
+        return testService.register()
+    }
+    function handleFuncLog(ev) {
+        ev.preventDefault()
+        return testService.login()
+    }
+    function handleFuncgetuser(ev) {
+        ev.preventDefault()
+        return testService.getuser()
+    }
+    function handleFuncedituser(ev) {
+        ev.preventDefault()
+        return testService.edituser()
+    }
 
     return (
         <FormWrapper>
@@ -35,8 +51,12 @@ function Register() {
                 </div>
                 <div>
                     <label></label>
-                    {/*<button onClick={handleFunc}>click</button>*/}
+                    <button onClick={handleFuncedituser}>editUser</button>
+                    <button onClick={handleFunc}>logout</button>
+                    <button onClick={handleFuncgetuser}>getUser</button>
                     <FormButton value="Регистрация" id="register-button"></FormButton>
+                    <button onClick={handleFuncReg}>Reg</button>
+                    <button onClick={handleFuncLog}>login</button>
                 </div>
             </form>
         </FormWrapper>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Link from '../Link'
 import styles from './style.module.css'
 
