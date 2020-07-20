@@ -11,6 +11,7 @@ import Login from '../Login';
 import NewTravel from '../NewTravel';
 import HotelForm from '../Hotel';
 import FlightForm from '../Flight';
+import CardsWrapper from '../CardsWrapper';
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
               <Route path="/statistics" render={Home} />
               <Route path="/hotel-form" render={HotelForm} />
               <Route path="/flight-form" render={FlightForm} />
-              <Route path="/my-travels" render={Home} />
+              <Route path="/my-travels" render={CardsWrapper} />
             </Switch>
           </main>
         </div>
