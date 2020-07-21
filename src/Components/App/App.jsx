@@ -25,14 +25,14 @@ function App() {
           <main>
             <Switch>
               <Route path="/" exact><Redirect to="/home" /></Route>
-              <Route path="/home" render={Home} />
-              <Route path="/register" render={Register} />
-              <Route path="/login" render={Login} />
-              <Route path="/new-travel" render={NewTravel} />
-              <Route path="/statistics" render={Home} />
-              <Route path="/hotel-form" render={HotelForm} />
-              <Route path="/flight-form" render={FlightForm} />
-              <Route path="/my-travels" render={CardsWrapper} />
+              <Route path="/home" component={Home} />
+              <Route path="/register" component={Register} />
+              <Route path="/login" component={Login} />
+              <Route path="/new-travel" component={NewTravel} />
+              <Route path="/statistics" component={Home} />
+              <Route path="/hotel-form" component={HotelForm} />
+              <Route path="/flight-form" component={FlightForm} />
+              <Route path="/my-travels" component={CardsWrapper} />
             </Switch>
           </main>
         </div>
