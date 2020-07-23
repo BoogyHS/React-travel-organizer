@@ -10,7 +10,7 @@ const testService = {
             // .then(res => res.json())
             .then(console.log);
     },
-    register: function (url='http://localhost:3300/api/users/register'){
+    register: function (url='https://arcane-retreat-44164.herokuapp.com/api/users/register'){
         const bodyData = {
             name: 'SomeName',
             email: 'some@email.com',
@@ -21,7 +21,8 @@ const testService = {
         const data = {
             method: 'post',
             headers:{
-                'Content-type': 'application/json'
+                'Content-type': 'application/json',
+                credentials: 'include'
             },
             body: JSON.stringify(bodyData),
         }
@@ -29,11 +30,8 @@ const testService = {
         .then(res=>res.json())
         .then(console.log)
     },
-    login: function(url='http://localhost:3300/api/users/login'){
-        const bodyData = {
-            username: 'someUsername',
-            password: '12345',
-        }
+    login: function(bodyData, url='http://localhost:3300/api/users/login'){
+       
         const data = {
             method: 'post',
             headers:{

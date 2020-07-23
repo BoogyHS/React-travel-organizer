@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import FormWrapper from '../common/FormWrapper'
 import FormButton from '../common/FormButton'
+import testService from '../../Services/testservice/test';
 
 function Login() {
 
@@ -8,8 +9,11 @@ function Login() {
     const [password, setPassword] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e.target.username.value)
-        console.log(e.target.password.value)
+        const data = {
+            username: e.target.username.value,
+            password: e.target.password.value,
+        }
+        testService.login(data)
     }
 
     return (
