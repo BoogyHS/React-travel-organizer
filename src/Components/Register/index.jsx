@@ -6,34 +6,39 @@ import FormWrapper from '../common/FormWrapper'
 import FormButton from '../common/FormButton'
 
 //services
-import testService from '../../Services/testservice/test.js'
+import userService from '../../Services/user-service'
 
-function Register() {
+function Register(props) {
 
     const { register, handleSubmit, watch, errors } = useForm();
     const onSubmit = data => {
-        console.log(data);
+        userService.register(data)
+        .then(x=>{
+            console.log(x)
+            props.history.push('/')
+        })
+        // console.log(data);
     };
 
     function handleFunc(ev) {
         ev.preventDefault()
-        return testService.logout()
+        return userService.logout()
     }
     function handleFuncReg(ev) {
         ev.preventDefault()
-        return testService.register()
+        return userService.register()
     }
     function handleFuncLog(ev) {
         ev.preventDefault()
-        return testService.login()
+        return userService.login()
     }
     function handleFuncgetuser(ev) {
         ev.preventDefault()
-        return testService.getuser()
+        return userService.getuser()
     }
     function handleFuncedituser(ev) {
         ev.preventDefault()
-        return testService.edituser()
+        return userService.edituser()
     }
 
     return (

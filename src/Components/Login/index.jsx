@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import FormWrapper from '../common/FormWrapper'
 import FormButton from '../common/FormButton'
-import testService from '../../Services/testservice/test';
+import userService from '../../Services/user-service';
 
-function Login() {
+function Login(props) {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -13,7 +13,11 @@ function Login() {
             username: e.target.username.value,
             password: e.target.password.value,
         }
-        testService.login(data)
+        userService.login(data)
+        .then(x=>{
+            console.log(x)
+            props.history.push('/')
+        })
     }
 
     return (
