@@ -16,7 +16,7 @@ const userService = {
             headers:{
                 'Content-type': 'application/json',
             },
-            // credentials: 'include',
+            credentials: 'include',
             body: JSON.stringify(bodyData),
         }
         return fetch (url, data)
@@ -29,6 +29,7 @@ const userService = {
             headers:{
                 'Content-type': 'application/json'
             },
+            credentials: 'include',
             body: JSON.stringify(bodyData),
         }
         return fetch (url, data)
@@ -40,11 +41,11 @@ const userService = {
             method: 'post',
             headers:{
                 'Content-type': 'application/json'
-            }
+            },
+            credentials: 'include'
         }
         return fetch(url, data)
         .then(res => res.json())
-        .then(console.log)
         .catch(err=>console.error(err));
     },
     // getuser: function(url='http://localhost:3300/api/users/user/someUsername'){

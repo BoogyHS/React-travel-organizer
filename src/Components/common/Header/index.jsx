@@ -2,7 +2,7 @@ import React from 'react'
 import Link from '../Link'
 import styles from './style.module.css'
 
-function Header() {
+function Header(props) {
 
     return (
         <header className={styles.header}>

@@ -8,6 +8,7 @@ import Footer from '../common/Footer'
 import Home from '../Home'
 import Register from '../Register';
 import Login from '../Login';
+import Logout from '../Logout';
 import NewTravel from '../NewTravel';
 import HotelForm from '../Hotel';
 import FlightForm from '../Flight';
@@ -28,6 +29,7 @@ function App() {
               <Route path="/home" component={Home} />
               <Route path="/register" component={Register} />
               <Route path="/login" component={Login} />
+              <Route path="/logout" component={Logout} />
               <Route path="/new-travel" component={NewTravel} />
               <Route path="/statistics" component={Home} />
               <Route path="/hotel-form" component={HotelForm} />

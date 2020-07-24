@@ -17,29 +17,7 @@ function Register(props) {
             console.log(x)
             props.history.push('/')
         })
-        // console.log(data);
     };
-
-    function handleFunc(ev) {
-        ev.preventDefault()
-        return userService.logout()
-    }
-    function handleFuncReg(ev) {
-        ev.preventDefault()
-        return userService.register()
-    }
-    function handleFuncLog(ev) {
-        ev.preventDefault()
-        return userService.login()
-    }
-    function handleFuncgetuser(ev) {
-        ev.preventDefault()
-        return userService.getuser()
-    }
-    function handleFuncedituser(ev) {
-        ev.preventDefault()
-        return userService.edituser()
-    }
 
     return (
         <FormWrapper>
@@ -118,12 +96,7 @@ function Register(props) {
                 </div>
                 <div>
                     <label></label>
-                    <button onClick={handleFuncedituser}>editUser</button>
-                    <button onClick={handleFunc}>logout</button>
-                    <button onClick={handleFuncgetuser}>getUser</button>
                     <FormButton value="Регистрация" id="register-button"></FormButton>
-                    <button onClick={handleFuncReg}>Reg</button>
-                    <button onClick={handleFuncLog}>login</button>
                 </div>
             </form>
         </FormWrapper>
