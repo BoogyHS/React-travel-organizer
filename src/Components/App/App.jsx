@@ -9,7 +9,7 @@ import Home from '../Home'
 import Register from '../Register';
 import Login from '../Login';
 import Logout from '../Logout';
-import NewTravel from '../NewTravel';
+import NewTrip from '../NewTrip';
 import HotelForm from '../Hotel';
 import FlightForm from '../Flight';
 import CardsWrapper from '../CardsWrapper';
@@ -30,11 +30,11 @@ function App() {
               <Route path="/register" component={Register} />
               <Route path="/login" component={Login} />
               <Route path="/logout" component={Logout} />
-              <Route path="/new-travel" component={NewTravel} />
+              <Route path="/new-trip" component={NewTrip} />
               <Route path="/statistics" component={Home} />
               <Route path="/hotel-form" component={HotelForm} />
               <Route path="/flight-form" component={FlightForm} />
-              <Route path="/my-travels" component={CardsWrapper} />
+              <Route path="/my-trips" component={CardsWrapper} />
             </Switch>
           </main>
         </div>

@@ -1,16 +1,12 @@
-const baseUrl = 'https://arcane-retreat-44164.herokuapp.com/api/users';
-// const baseUrl = 'http://localhost:3300/api/users';
+// import statusHandler from '../utils/response-status-handler';
+
+// const baseUrl = 'https://arcane-retreat-44164.herokuapp.com/api/users';
+const baseUrl = 'http://localhost:3300/api/users';
 
 const userService = {
     
     register: function (bodyData, url=`${baseUrl}/register`){
-        // const bodyData = {
-        //     name: 'SomeName',
-        //     email: 'some@email.com',
-        //     username: 'someUsername',
-        //     password: '12345',
-        //     rePassword: '12345'
-        // }
+
         const data = {
             method: 'post',
             headers:{
@@ -20,6 +16,7 @@ const userService = {
             body: JSON.stringify(bodyData),
         }
         return fetch (url, data)
+        // .then(statusHandler)
         .then(res=>res.json())
         .catch(err=>console.error(err));
     },
@@ -33,8 +30,9 @@ const userService = {
             body: JSON.stringify(bodyData),
         }
         return fetch (url, data)
+        // .then(statusHandler)
         .then(res=>res.json())
-        .catch(err=>console.error(err));
+        .catch(err=>console.error(err, 'here'));
     },
     logout: function (url=`${baseUrl}/logout`) {
         const data = {
@@ -45,6 +43,7 @@ const userService = {
             credentials: 'include'
         }
         return fetch(url, data)
+        // .then(statusHandler)
         .then(res => res.json())
         .catch(err=>console.error(err));
     },

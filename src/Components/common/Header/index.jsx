@@ -13,7 +13,7 @@ function Header(props) {
                 <li><Link to="/register">Регистрация</Link></li>
                 <li><Link to="/login">Вход</Link></li>
                 <li><Link to="/logout">Изход</Link></li>
-                <li><Link to="/new-travel">Ново пътуване</Link></li>
+                <li><Link to="/new-trip">Ново пътуване</Link></li>
                 <li><Link to="/statistics">Статистика</Link></li>
             </ul>
         </header>

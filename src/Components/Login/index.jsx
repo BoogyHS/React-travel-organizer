@@ -15,7 +15,7 @@ function Login(props) {
         }
         userService.login(data)
         .then(x=>{
-            console.log(x)
+            console.log(x, 'login')
             props.history.push('/')
         })
     }

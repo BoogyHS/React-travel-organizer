@@ -13,10 +13,10 @@ function Register(props) {
     const { register, handleSubmit, watch, errors } = useForm();
     const onSubmit = data => {
         userService.register(data)
-        .then(x=>{
-            console.log(x)
-            props.history.push('/')
-        })
+            .then(x => {
+                console.log(x)
+                props.history.push('/')
+            })
     };
 
     return (
