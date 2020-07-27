@@ -1,5 +1,5 @@
-// const baseUrl = 'https://arcane-retreat-44164.herokuapp.com/api/trips';
-const baseUrl = 'http://localhost:3300/api/trips';
+const baseUrl = 'https://arcane-retreat-44164.herokuapp.com/api/trips';
+// const baseUrl = 'http://localhost:3300/api/trips';
 
 const tripService = {
 
@@ -16,7 +16,7 @@ const tripService = {
         return fetch(url, data)
             // .then(statusHandler)
             .then(res => res.json())
-            .catch(err => console.error(err, 'here'));
+            .catch(err => console.log(err, 'here'));
     },
 };
 
