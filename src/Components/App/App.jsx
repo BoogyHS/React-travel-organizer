@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
+//styles
 import styles from './App.module.css'
 
+//components
 import Header from '../common/Header'
 import Footer from '../common/Footer'
 import Home from '../Home'

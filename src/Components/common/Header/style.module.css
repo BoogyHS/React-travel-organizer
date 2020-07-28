@@ -1,7 +1,7 @@
 /* Start of Header Styling*/
 
 .header {
-    background: linear-gradient(#63E651, #42753E);
+    background: linear-gradient(rgba(99, 230, 81, 0.7), rgba(66, 117, 62, 0.7));
     position: absolute;
     width: 100%;
     /* height: 70px; */
@@ -64,7 +64,7 @@
 }
 
 .header .menu-icon .navicon {
-    background: linear-gradient(#63E651, #42753E);
+    background: linear-gradient(rgba(99, 230, 81, 0.7), rgba(66, 117, 62, 0.7));
     display: block;
     height: 2px;
     position: relative;
@@ -72,7 +72,7 @@
 }
 
 .header .menu-icon .navicon:before, .header .menu-icon .navicon:after {
-    background: #333;
+    background: rgb(240, 240, 240);
     content: '';
     display: block;
     height: 100%;
@@ -80,8 +80,6 @@
     transition: all .2s ease-out;
     width: 100%;
 }
-
-.header .menu-icon .navicon:before {}
 
 .header .menu-icon .navicon:after {
     top: -5px;
@@ -95,7 +93,7 @@
 
 .header .menu-btn:checked~.menu {
     max-height: 340px;
-    background: linear-gradient(#42753E, #63E651);
+    background: linear-gradient(rgba(99, 230, 81, 0.7), rgba(66, 117, 62, 0.7));
 }
 
 .header .menu-btn:checked~.menu-icon .navicon {
@@ -121,9 +119,6 @@
     .header li {
         float: left;
         margin: 1rem;
-    }
-    .header li a {
-        /* padding: 20px 30px; */
     }
     .header .menu {
         clear: none;

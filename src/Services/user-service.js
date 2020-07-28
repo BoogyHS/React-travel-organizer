@@ -1,7 +1,7 @@
 // import statusHandler from '../utils/response-status-handler';
 
-const baseUrl = 'https://rest-api-react-project.herokuapp.com/api/users';
-// const baseUrl = 'http://localhost:3300/api/users';
+// const baseUrl = 'https://rest-api-react-project.herokuapp.com/api/users';
+const baseUrl = 'http://localhost:3300/api/users';
 
 const userService = {
     

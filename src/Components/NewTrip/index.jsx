@@ -9,14 +9,14 @@ import FormButton from '../common/FormButton'
 import tripService from '../../Services/trip-service'
 
 function NewTrip(props) {
-    
+
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
-        data = {userId: '5f1ed1f33213583584617662', ...data}
+        data = { userId: '5f2015eb72ab0d34b02832b1', ...data }
         tripService.newTrip(data)
             .then(x => {
                 console.log(x)
-                props.history.push('/')
+                // props.history.push('/')
             })
     };
 
@@ -32,7 +32,7 @@ function NewTrip(props) {
                         name="name"
                         spellCheck="false"
                         placeholder="New Zealand 2018"
-                        ref={register({required:true})}
+                        ref={register({ required: true })}
                     />
                     {errors.name && <p>This field is required</p>}
                 </div>
@@ -42,7 +42,7 @@ function NewTrip(props) {
                         type="date"
                         id="start-date"
                         name="startDate"
-                        ref={register({required:true})}
+                        ref={register({ required: true })}
                     />
                     {errors.startDate && <p>This field is required</p>}
                 </div>
@@ -52,7 +52,7 @@ function NewTrip(props) {
                         type="date"
                         id="end-date"
                         name="endDate"
-                        ref={register({required:true})}
+                        ref={register({ required: true })}
                     />
                     {errors.endDate && <p>This field is required</p>}
                 </div>

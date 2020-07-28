@@ -1,7 +1,8 @@
 import React from 'react'
-import Card from '../common/Card'
 
 import styles from './style.module.css'
+
+import Card from '../common/Card'
 
 function CardsWrapper(){
      return (

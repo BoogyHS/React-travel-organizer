@@ -1,5 +1,5 @@
-const baseUrl = 'https://rest-api-react-project.herokuapp.com/api/trips';
-// const baseUrl = 'http://localhost:3300/api/trips';
+// const baseUrl = 'https://rest-api-react-project.herokuapp.com/api/trips';
+const baseUrl = 'http://localhost:3300/api/trips';
 
 const tripService = {
 
