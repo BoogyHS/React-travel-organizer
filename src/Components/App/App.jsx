@@ -16,12 +16,25 @@ import HotelForm from '../Hotel';
 import FlightForm from '../Flight';
 import CardsWrapper from '../CardsWrapper';
 
+const userDetails = {
+  isLogged: false,
+  user: undefined,
+  changeDetails: function (user) {
+    if (user) {
+      this.isLogged = true;
+      this.user = user;
+    } else {
+      this.isLogged = false;
+      this.user = undefined;
+    }
+  }
+};
 
 function App() {
-  // const userContext = React.createContext({ loggedIn: false });
-
+  const userContext = React.createContext({ userDetails });
   return (
-    // <userContext.Provider value={{ loggedIn: false }}>
+    <userContext.Provider>
+
       <BrowserRouter>
         <Header />
         <div className={styles["wrapper"]}>
@@ -42,7 +55,7 @@ function App() {
         </div>
         <Footer />
       </BrowserRouter>
-    // </userContext.Provider>
+    </userContext.Provider>
   );
 }
 
