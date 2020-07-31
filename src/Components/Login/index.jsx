@@ -23,9 +23,9 @@ function Login(props) {
             password: e.target.password.value,
         }
         userService.login(data)
-            .then(x => {
-                setUser(x);
-                console.log(x, 'login')
+            .then(user => {
+                setUser(user);
+                console.log(user, 'login')
                 props.history.push('/')
             })
     }

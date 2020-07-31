@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext} from 'react'
 import { useForm } from "react-hook-form";
 
 //components
@@ -8,13 +8,18 @@ import FormButton from '../common/FormButton'
 //services
 import userService from '../../Services/user-service'
 
+// context 
+import userContext from '../../Contexts/UserContext'
+
 function Register(props) {
+    const [user, setUser] = useContext(userContext);
 
     const { register, handleSubmit, watch, errors } = useForm();
     const onSubmit = data => {
         userService.register(data)
-            .then(x => {
-                console.log(x)
+            .then(user => {
+                setUser(user);
+                console.log(user)
                 props.history.push('/')
             })
     };

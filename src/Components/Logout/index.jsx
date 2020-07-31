@@ -1,11 +1,19 @@
-// import React from 'react';
+import { useContext } from 'react';
 
+//services
 import userService from '../../Services/user-service';
 
+//context
+import userContext from '../../Contexts/UserContext'
+
 function Logout(props) {
-    console.log('logout')
+    const [user, setUser] = useContext(userContext);
+
     userService.logout()
-        .then(() => props.history.push('/'))
+        .then(() => {
+            setUser({ user: undefined });
+            props.history.push('/')
+        })
     return null
 }
 

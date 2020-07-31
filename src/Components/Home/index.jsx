@@ -1,12 +1,18 @@
-import React from 'react';
-import Link from '../common/Link'
+import React, { useContext } from 'react';
+
 import styles from './style.module.css'
 
-// const loggedTextContentArr = ['Ново пътуване', 'Моите пътувания', 'Статистика'];
+// components
+import Link from '../common/Link'
+
+//context
+import userContext from '../../Contexts/UserContext'
 
 function Home(props) {
 
-    if (props.loggedIn) {
+    const [user, setUser] = useContext(userContext);
+    
+    if (user.username) {
         return (
             <div className={styles["home-card-wrapper"]}>
                 <Link to="/new-trip" className={`${styles["home-card"]} ${styles["card"]}`}>
