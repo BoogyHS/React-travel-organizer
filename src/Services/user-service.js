@@ -45,7 +45,7 @@ const userService = {
         return fetch(url, data)
         // .then(statusHandler)
         .then(res => res.json())
-        .catch(err=>console.error(err));
+        .catch(err=>console.log(err));
     },
     // confirmUser: function(url=`${baseUrl}/confirm-user`){
     //     const data = {

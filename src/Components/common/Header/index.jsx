@@ -9,7 +9,7 @@ import Link from '../Link'
 import userContext from '../../../Contexts/UserContext/index'
 
 function Header(props) {
-    const [user, setUser] = useContext(userContext);
+    const [user, ] = useContext(userContext);
     
     return (
         <header className={styles.header}>

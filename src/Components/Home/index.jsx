@@ -10,7 +10,7 @@ import userContext from '../../Contexts/UserContext'
 
 function Home(props) {
 
-    const [user, setUser] = useContext(userContext);
+    const [user, ] = useContext(userContext);
     
     if (user.username) {
         return (

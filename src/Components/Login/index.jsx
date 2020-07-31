@@ -14,7 +14,7 @@ function Login(props) {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [user, setUser] = useContext(userContext);
+    const [, setUser] = useContext(userContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();

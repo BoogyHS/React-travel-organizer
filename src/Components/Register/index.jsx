@@ -12,7 +12,7 @@ import userService from '../../Services/user-service'
 import userContext from '../../Contexts/UserContext'
 
 function Register(props) {
-    const [user, setUser] = useContext(userContext);
+    const [, setUser] = useContext(userContext);
 
     const { register, handleSubmit, watch, errors } = useForm();
     const onSubmit = data => {

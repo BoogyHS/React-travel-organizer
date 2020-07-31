@@ -1,9 +1,9 @@
 .cards {
     width: 100%;
     margin: auto;
-    margin-top: 3rem;
+    margin-top: 0.7rem;
     margin-bottom: 1rem;
-    height: 80vh;
+    height: 75vh;
     overflow: auto;
     padding-right: 1rem;
     padding-bottom: 2.5rem;
@@ -14,9 +14,21 @@
     margin-top: 1rem;
 }
 
+main>div>h2 {
+    color: white;
+    text-align: center;
+    border-bottom: 3px solid #5ac54c;
+    padding: 0;
+    margin-bottom: 0;
+}
+
 @media only screen and (min-width: 769px) {
     .cards {
         width: 80%;
+    }
+    .responsive-width {
+        width: 80%;
+        margin: auto;
     }
 }
 

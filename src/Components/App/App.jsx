@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 //styles
@@ -14,7 +14,7 @@ import Logout from '../Logout';
 import NewTrip from '../NewTrip';
 import HotelForm from '../Hotel';
 import FlightForm from '../Flight';
-import CardsWrapper from '../CardsWrapper';
+import TripsWrapper from '../TripsWrapper';
 
 //context
 import userContext from '../../Contexts/UserContext'
@@ -39,7 +39,7 @@ function App() {
               <Route path="/statistics" component={Home} />
               <Route path="/hotel-form" component={HotelForm} />
               <Route path="/flight-form" component={FlightForm} />
-              <Route path="/my-trips" component={CardsWrapper} />
+              <Route path="/my-trips" component={TripsWrapper} />
             </Switch>
           </main>
         </div>
