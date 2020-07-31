@@ -5,7 +5,7 @@ import FormWrapper from '../common/FormWrapper'
 import FormButton from '../common/FormButton'
 
 //services
-import userService from '../../Services/user-service';
+import userService from '../../Services/user-service'
 
 //contexts
 import userContext from '../../Contexts/UserContext/index'
@@ -14,7 +14,7 @@ function Login(props) {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const { userDetails } = useContext(userContext);
+    const [user, setUser] = useContext(userContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,8 +24,7 @@ function Login(props) {
         }
         userService.login(data)
             .then(x => {
-                userDetails.changeDetails(x)
-                console.log(userDetails.isLogged)
+                setUser(x);
                 console.log(x, 'login')
                 props.history.push('/')
             })

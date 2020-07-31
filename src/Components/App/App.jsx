@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 //styles
@@ -16,24 +16,13 @@ import HotelForm from '../Hotel';
 import FlightForm from '../Flight';
 import CardsWrapper from '../CardsWrapper';
 
-const userDetails = {
-  isLogged: false,
-  user: undefined,
-  changeDetails: function (user) {
-    if (user) {
-      this.isLogged = true;
-      this.user = user;
-    } else {
-      this.isLogged = false;
-      this.user = undefined;
-    }
-  }
-};
+import userContext from '../../Contexts/UserContext'
 
 function App() {
-  const userContext = React.createContext({ userDetails });
+  const [user, setUser] = useState({});
+
   return (
-    <userContext.Provider>
+    <userContext.Provider value={[user, setUser]}>
 
       <BrowserRouter>
         <Header />

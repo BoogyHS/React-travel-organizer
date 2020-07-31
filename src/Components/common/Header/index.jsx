@@ -5,7 +5,7 @@ import styles from './style.module.css'
 import userContext from '../../../Contexts/UserContext/index'
 
 function Header(props) {
-    const { userDetails } = useContext(userContext);
+    const [user, setUser] = useContext(userContext);
     
     return (
         <header className={styles.header}>
@@ -13,12 +13,13 @@ function Header(props) {
             <label className={styles["menu-icon"]} htmlFor="menu-btn"><span className={styles.navicon}></span></label>
             <ul className={styles.menu}>
                 <li><Link to="/">Начало</Link></li>
-                {!userDetails.isLogged && <li><Link to="/register">Регистрация</Link></li>}
-                {!userDetails.isLogged && <li><Link to="/login">Вход</Link></li>}
-                {userDetails.isLogged && <li><Link to="/logout">Изход</Link></li>}
-                {userDetails.isLogged && <li><Link to="/new-trip">Ново пътуване</Link></li>}
-                {!userDetails.isLogged && <li><Link to="/new-trip">Ново пътуване</Link></li>}
-                {userDetails.isLogged && <li><Link to="/statistics">Статистика</Link></li>}
+                <li><Link to="/">{user.username}</Link></li>
+                {!user.username && <li><Link to="/register">Регистрация</Link></li>}
+                {!user.username && <li><Link to="/login">Вход</Link></li>}
+                {user.username && <li><Link to="/logout">Изход</Link></li>}
+                {user.username && <li><Link to="/new-trip">Ново пътуване</Link></li>}
+                {!user.username && <li><Link to="/new-trip">Ново пътуване</Link></li>}
+                {user.username && <li><Link to="/statistics">Статистика</Link></li>}
             </ul>
         </header>
     )
