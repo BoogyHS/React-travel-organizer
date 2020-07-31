@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 //styles
@@ -16,6 +16,7 @@ import HotelForm from '../Hotel';
 import FlightForm from '../Flight';
 import CardsWrapper from '../CardsWrapper';
 
+//context
 import userContext from '../../Contexts/UserContext'
 
 function App() {

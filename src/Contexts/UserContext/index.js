@@ -1,5 +1,11 @@
 import React from 'react';
 
+//service
+// import userService from '../../Services/user-service'
+
+// userService.confirmUser()
+//     .then(res => console.log(res, 'usercontext'));
+    
 const userDetails = {
     user: undefined
 };

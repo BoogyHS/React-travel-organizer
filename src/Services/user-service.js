@@ -47,6 +47,18 @@ const userService = {
         .then(res => res.json())
         .catch(err=>console.error(err));
     },
+    // confirmUser: function(url=`${baseUrl}/confirm-user`){
+    //     const data = {
+    //         method: 'get',
+    //         headers:{
+    //             'Content-type': 'application/json'
+    //         },
+    //         credentials: 'include'
+    //     }
+    //     return fetch(url, data)
+    //     .then(res => res.json())
+    //     .catch(err=>console.error(err));
+    // }
     // getuser: function(url='http://localhost:3300/api/users/user/someUsername'){
        
     //     const data = {
