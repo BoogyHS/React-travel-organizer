@@ -4,63 +4,63 @@
 const baseUrl = 'http://localhost:3300/api/users';
 
 const userService = {
-    
-    register: function (bodyData, url=`${baseUrl}/register`){
+
+    register: function (bodyData, url = `${baseUrl}/register`) {
 
         const data = {
             method: 'post',
-            headers:{
+            headers: {
                 'Content-type': 'application/json',
             },
             credentials: 'include',
             body: JSON.stringify(bodyData),
         }
-        return fetch (url, data)
-        // .then(statusHandler)
-        .then(res=>res.json())
-        .catch(err=>console.error(err));
+        return fetch(url, data)
+            // .then(statusHandler)
+            .then(res => res.json())
+            .catch(err => console.error(err));
     },
-    login: function(bodyData, url=`${baseUrl}/login`){
+    login: function (bodyData, url = `${baseUrl}/login`) {
         const data = {
             method: 'post',
-            headers:{
+            headers: {
                 'Content-type': 'application/json'
             },
             credentials: 'include',
             body: JSON.stringify(bodyData),
         }
-        return fetch (url, data)
-        // .then(statusHandler)
-        .then(res=>res.json())
-        .catch(err=>console.error(err, 'here'));
+        return fetch(url, data)
+            // .then(statusHandler)
+            .then(res => res.json())
+            .catch(err => console.error(err, 'here'));
     },
-    logout: function (url=`${baseUrl}/logout`) {
+    logout: function (url = `${baseUrl}/logout`) {
         const data = {
             method: 'post',
-            headers:{
+            headers: {
                 'Content-type': 'application/json'
             },
             credentials: 'include'
         }
         return fetch(url, data)
-        // .then(statusHandler)
-        .then(res => res.json())
-        .catch(err=>console.log(err));
+            // .then(statusHandler)
+            .then(res => res.json())
+            .catch(err => console.log(err));
     },
-    // confirmUser: function(url=`${baseUrl}/confirm-user`){
-    //     const data = {
-    //         method: 'get',
-    //         headers:{
-    //             'Content-type': 'application/json'
-    //         },
-    //         credentials: 'include'
-    //     }
-    //     return fetch(url, data)
-    //     .then(res => res.json())
-    //     .catch(err=>console.error(err));
-    // }
+    confirmUser: function (url = `${baseUrl}/confirm-user`) {
+        const data = {
+            method: 'get',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            credentials: 'include'
+        }
+        return fetch(url, data)
+            // .then(res => res.json())
+            // .catch(err => console.log(err));
+    }
     // getuser: function(url='http://localhost:3300/api/users/user/someUsername'){
-       
+
     //     const data = {
     //         method: 'get',
     //         headers:{
@@ -106,7 +106,7 @@ const userService = {
     //     .then(res=>res.json())
     //     .then(console.log)
     // },
-    
+
 };
 
 // testService.load('http://localhost:4200/api/users/register')

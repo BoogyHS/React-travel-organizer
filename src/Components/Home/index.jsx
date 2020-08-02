@@ -12,7 +12,7 @@ function Home(props) {
 
     const [user, ] = useContext(userContext);
     
-    if (user.username) {
+    if (user) {
         return (
             <div className={styles["home-card-wrapper"]}>
                 <Link to="/new-trip" className={`${styles["home-card"]} ${styles["card"]}`}>

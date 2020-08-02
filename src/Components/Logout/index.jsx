@@ -11,7 +11,7 @@ function Logout(props) {
 
     userService.logout()
         .then(() => {
-            setUser({ user: undefined });
+            setUser(undefined);
             props.history.push('/')
         })
     return null

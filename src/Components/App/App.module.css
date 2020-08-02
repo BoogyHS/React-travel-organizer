@@ -10,3 +10,7 @@
 main {
     flex-basis: 70%;
 }
+
+.loader {
+    margin: auto;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 //styles
@@ -7,6 +7,7 @@ import styles from './App.module.css'
 //components
 import Header from '../common/Header'
 import Footer from '../common/Footer'
+import Loader from '../common/Loader'
 import Home from '../Home'
 import Register from '../Register';
 import Login from '../Login';
@@ -19,34 +20,59 @@ import TripsWrapper from '../TripsWrapper';
 //context
 import userContext from '../../Contexts/UserContext'
 
+//services
+import userService from '../../Services/user-service';
+
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(undefined);
+  const [isLoading, setLoading] = useState(true);
 
-  return (
-    <userContext.Provider value={[user, setUser]}>
+  useEffect(() => {
+    userService.confirmUser()
+      .then(res => {
+        if (res.status === 401) { throw new Error('Unauthorized'); }
+        res.json()
+          .then(user => {
+            setUser(user);
+            setLoading(false);
+          });
+      })
+      .catch(err => {
+        setLoading(false);
+      });
+  }, []);
 
-      <BrowserRouter>
-        <Header />
-        <div className={styles["wrapper"]}>
-          <main>
-            <Switch>
-              <Route path="/" exact><Redirect to="/home" /></Route>
-              <Route path="/home" component={Home} />
-              <Route path="/register" component={Register} />
-              <Route path="/login" component={Login} />
-              <Route path="/logout" component={Logout} />
-              <Route path="/new-trip" component={NewTrip} />
-              <Route path="/statistics" component={Home} />
-              <Route path="/hotel-form" component={HotelForm} />
-              <Route path="/flight-form" component={FlightForm} />
-              <Route path="/my-trips" component={TripsWrapper} />
-            </Switch>
-          </main>
-        </div>
-        <Footer />
-      </BrowserRouter>
-    </userContext.Provider>
-  );
+  if (isLoading) {
+
+    return <Loader className={styles.loader}></Loader>
+
+  } else {
+
+    return (
+      <userContext.Provider value={[user, setUser]}>
+        <BrowserRouter>
+          <Header />
+          <div className={styles["wrapper"]}>
+            <main>
+              <Switch>
+                <Route path="/" exact><Redirect to="/home" /></Route>
+                <Route path="/home" component={Home} />
+                <Route path="/register" component={Register} />
+                <Route path="/login" component={Login} />
+                <Route path="/logout" component={Logout} />
+                <Route path="/new-trip" component={NewTrip} />
+                <Route path="/statistics" component={Home} />
+                <Route path="/hotel-form" component={HotelForm} />
+                <Route path="/flight-form" component={FlightForm} />
+                <Route path="/my-trips" component={TripsWrapper} />
+              </Switch>
+            </main>
+          </div>
+          <Footer />
+        </BrowserRouter>
+      </userContext.Provider>
+    );
+  }
 }
 
 export default App;
