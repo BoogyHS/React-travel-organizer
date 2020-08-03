@@ -71,7 +71,7 @@ function App() {
                 <Route path="/hotel-form" component={HotelForm} />
                 <Route path="/flight-form" component={FlightForm} />
                 <Route path="/my-trips" exact component={TripsWrapper} />
-                <Route path="/my-trips/id" component={TripDetails} />
+                <Route path="/my-trips/:id" component={TripDetails} />
                 <Route path="*" component={NotFound} />
               </Switch>
             </main>

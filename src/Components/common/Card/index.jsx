@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './style.module.css'
 
 function Card(props) {
-    console.log(props.trip)
+
     return (
         <div className={styles.card}>
             <div className={styles["card-left-part"]}>
@@ -11,8 +11,8 @@ function Card(props) {
                     alt="" />
             </div>
             <div className={styles["card-middle-part"]}>
-                <h3> <span>{props.trip.name}</span> <span></span></h3>
-                <h4 className={styles["card-hotel-name"]}> </h4>
+                <h3> <span>{props.trip.name}</span> {!props.trip && <span></span>}</h3>
+                {!props.trip && <h4 className={styles["card-hotel-name"]}> </h4>}
                 <p> <b>Start</b> <span>{props.trip.startDate}</span> <b>End</b> <span>{props.trip.endDate}</span></p>
             </div>
             <div className={styles["card-right-part"]}>
