@@ -22,6 +22,8 @@ import userContext from '../../Contexts/UserContext'
 
 //services
 import userService from '../../Services/user-service';
+import TripDetails from '../TripDetails';
+import NotFound from '../common/NotFound';
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -33,11 +35,11 @@ function App() {
         if (res.status === 401) { throw new Error('Unauthorized'); }
         res.json()
           .then(user => {
-            if (user.username){
+            if (user.username) {
               setUser(user);
               setLoading(false);
-            }else {
-              throw new Error (user.text())
+            } else {
+              throw new Error(user.text())
             }
           });
       })
@@ -68,7 +70,9 @@ function App() {
                 <Route path="/statistics" component={Home} />
                 <Route path="/hotel-form" component={HotelForm} />
                 <Route path="/flight-form" component={FlightForm} />
-                <Route path="/my-trips" component={TripsWrapper} />
+                <Route path="/my-trips" exact component={TripsWrapper} />
+                <Route path="/my-trips/id" component={TripDetails} />
+                <Route path="*" component={NotFound} />
               </Switch>
             </main>
           </div>

@@ -4,6 +4,8 @@ import styles from './style.module.css'
 
 //components
 import Card from '../common/Card'
+import Loader from '../common/Loader'
+import Link from '../common/Link'
 
 //context
 import userContext from '../../Contexts/UserContext/index'
@@ -28,14 +30,18 @@ function TripsWrapper() {
     return (
         <div>
             <h2 className={styles["responsive-width"]}>My Trips</h2>
-            {trips
-                ? <div className={styles.cards}>
-                    {trips.map((trip) =>
-                        <Card key={trip._id} trip={trip}></Card>)}
-                    <div>{currentDate()}</div>
-                </div>
-                : <div>Loading...</div>
-            }
+            <div className={styles.cards}>
+                {trips
+                    ? <div >
+                        {trips.map((trip) =>
+                            <Link to={`/my-trips/${trip._id}`} key={trip._id}>
+                                <Card trip={trip}></Card>
+                            </Link>)}
+                        <div>{currentDate()}</div>
+                    </div>
+                    : <Loader></Loader>
+                }
+            </div>
         </div>
     )
 }
