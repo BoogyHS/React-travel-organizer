@@ -1,11 +1,15 @@
 // import statusHandler from '../utils/response-status-handler';
 
 // const baseUrl = 'https://rest-api-react-project.herokuapp.com/api/users';
-const baseUrl = 'http://localhost:3300/api/users';
+// const baseUrl = 'http://localhost:3300/api/users';
+
+import { baseUrl } from '../constants'
+
+// baseUrl = baseUrl + '/users'
 
 const userService = {
 
-    register: function (bodyData, url = `${baseUrl}/register`) {
+    register: function (bodyData, url = `${baseUrl}/users/register`) {
 
         const data = {
             method: 'post',
@@ -20,7 +24,7 @@ const userService = {
             .then(res => res.json())
             .catch(err => console.error(err));
     },
-    login: function (bodyData, url = `${baseUrl}/login`) {
+    login: function (bodyData, url = `${baseUrl}/users/login`) {
         const data = {
             method: 'post',
             headers: {
@@ -34,7 +38,7 @@ const userService = {
             .then(res => res.json())
             .catch(err => console.error(err, 'here'));
     },
-    logout: function (url = `${baseUrl}/logout`) {
+    logout: function (url = `${baseUrl}/users/logout`) {
         const data = {
             method: 'post',
             headers: {
@@ -47,7 +51,7 @@ const userService = {
             .then(res => res.json())
             .catch(err => console.log(err));
     },
-    confirmUser: function (url = `${baseUrl}/confirm-user`) {
+    confirmUser: function (url = `${baseUrl}/users/confirm-user`) {
         const data = {
             method: 'get',
             headers: {
@@ -56,8 +60,8 @@ const userService = {
             credentials: 'include'
         }
         return fetch(url, data)
-            // .then(res => res.json())
-            // .catch(err => console.log(err));
+        // .then(res => res.json())
+        // .catch(err => console.log(err));
     }
     // getuser: function(url='http://localhost:3300/api/users/user/someUsername'){
 
