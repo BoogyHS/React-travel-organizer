@@ -1,22 +1,27 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useForm } from "react-hook-form";
 
 //components
 import FormWrapper from '../common/FormWrapper'
 import FormButton from '../common/FormButton'
 
+//context
+import UserContext from '../../Contexts/UserContext'
+
 //services
 import tripService from '../../Services/trip-service'
 
 function NewTrip(props) {
 
+    const [user, ] = useContext(UserContext)
+
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
-        data = { userId: '5f2015eb72ab0d34b02832b1', ...data }
+        data = { userId: user._id, ...data }
         tripService.newTrip(data)
             .then(x => {
-                console.log(x)
-                // props.history.push('/')
+                console.log(x);
+                props.history.push('/');
             })
     };
 

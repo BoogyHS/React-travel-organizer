@@ -1,4 +1,4 @@
-import React, { useContext} from 'react'
+import React, { useContext } from 'react'
 import { useForm } from "react-hook-form";
 
 //components
@@ -17,11 +17,15 @@ function Register(props) {
     const { register, handleSubmit, watch, errors } = useForm();
     const onSubmit = data => {
         userService.register(data)
-            .then(user => {
-                setUser(user);
-                console.log(user)
-                props.history.push('/')
+            .then(res => {
+                if (res.username) {
+                    setUser(res); 
+                    props.history.push('/');
+                } else {
+                    throw new Error(res.message);
+                }
             })
+            .catch(err => console.log(err))
     };
 
     return (

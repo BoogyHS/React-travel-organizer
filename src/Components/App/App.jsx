@@ -33,8 +33,12 @@ function App() {
         if (res.status === 401) { throw new Error('Unauthorized'); }
         res.json()
           .then(user => {
-            setUser(user);
-            setLoading(false);
+            if (user.username){
+              setUser(user);
+              setLoading(false);
+            }else {
+              throw new Error (user.text())
+            }
           });
       })
       .catch(err => {

@@ -23,11 +23,15 @@ function Login(props) {
             password: e.target.password.value,
         }
         userService.login(data)
-            .then(user => {
-                setUser(user);
-                console.log(user, 'login')
-                props.history.push('/')
+            .then(res => {
+                if (res.username) {
+                    setUser(res);
+                    props.history.push('/');
+                } else {
+                    throw new Error(res.message)
+                }
             })
+            .catch(err => console.log(err))
     }
 
     return (

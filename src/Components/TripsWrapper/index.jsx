@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 
 import styles from './style.module.css'
 
@@ -13,27 +13,29 @@ import tripService from '../../Services/trip-service'
 
 
 function TripsWrapper() {
+    const [user,] = useContext(userContext);
+    const [trips, setTrips] = useState(null);
+    const currentDate = () => new Date().toJSON().split("T")[0];
 
-    const [user, ] = useContext(userContext);
-
-    tripService.getTrips(user._id)
-        .then(trips => {
-            console.log(trips)
-        })
-        .catch(err => console.log(err))
+    useEffect(() => {
+        tripService.getTrips(user._id)
+            .then(trips => {
+                setTrips(trips);
+            })
+            .catch(err => console.log(err))
+    }, [user._id]);
 
     return (
         <div>
             <h2 className={styles["responsive-width"]}>My Trips</h2>
-            <div className={styles.cards}>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-            </div>
+            {trips
+                ? <div className={styles.cards}>
+                    {trips.map((trip) =>
+                        <Card key={trip._id} trip={trip}></Card>)}
+                    <div>{currentDate()}</div>
+                </div>
+                : <div>Loading...</div>
+            }
         </div>
     )
 }
