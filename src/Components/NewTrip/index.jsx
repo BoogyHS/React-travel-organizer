@@ -27,7 +27,7 @@ function NewTrip(props) {
 
     return (
         <FormWrapper>
-            <h3>Ново пътуване</h3>
+            <h3>Нова дестинация</h3>
             <form id="new-trip-form" onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <label htmlFor="name">Име</label>

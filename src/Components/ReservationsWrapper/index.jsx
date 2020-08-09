@@ -14,33 +14,34 @@ import userContext from '../../Contexts/UserContext/index'
 import tripService from '../../Services/trip-service'
 
 
-function TripsWrapper() {
+function Reservations(props) {
     const [user,] = useContext(userContext);
-    const [trips, setTrips] = useState(null);
+    const [reservations, setReservations] = useState(null);
+    const tripId = props.match.params.id;
 
     useEffect(() => {
-        tripService.getTrips(user._id)
-            .then(trips => {
-                setTrips(trips);
+        tripService.getReservations(user._id, tripId)
+            .then(reservations => {
+                console.log('reservations component' )
+                // setReservations(reservations);
             })
             .catch(err => console.log(err))
-    }, [user._id]);
+    }, [user._id, tripId]);
 
     return (
         <div>
-            <h2 className={styles["responsive-width"]}>Моите Дестинации</h2>
-            
+            <h2 className={styles["responsive-width"]}>Резервации</h2>
             <div className={styles.cards}>
                 <Link to="/new-trip" className={styles.card}>
                     <div>
-                        <h2>Нова дестинация</h2>
+                        <h2>Ново пътуване</h2>
                     </div>
                 </Link>
-                {trips
+                {reservations
                     ? <div >
-                        {trips.map((trip) =>
-                            <Link to={`/my-trips/${trip._id}/reservations`} key={trip._id}>
-                                <Card trip={trip}></Card>
+                        {reservations.map((reservation) =>
+                            <Link to={`/my-trips/${reservation._id}`} key={reservation._id}>
+                                <Card reservation={reservation}></Card>
                             </Link>)}
                         
                     </div>
@@ -51,4 +52,4 @@ function TripsWrapper() {
     )
 }
 
-export default TripsWrapper
+export default Reservations

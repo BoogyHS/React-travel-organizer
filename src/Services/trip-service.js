@@ -15,23 +15,36 @@ const tripService = {
             },
             credentials: 'include',
             body: JSON.stringify(bodyData),
-        }
+        };
         return fetch(url, data)
             .then(res => res.json())
             .catch(err => console.log(err, 'new-trip-service'));
     },
     getTrips: function (userId) {
-        const url = `${baseUrl}/trips/my-trips?userId=${userId}`
+        const url = `${baseUrl}/trips/my-trips?userId=${userId}`;
         const data = {
             method: 'get',
             headers: {
                 'Content-type': 'application/json'
             },
             credentials: 'include',
-        }
+        };
         return fetch(url, data)
             .then(res => res.json())
             .catch(err => console.log(err, 'gettrips-service'));
+    },
+    getReservations: function (userId, tripId) {
+        const url = `${baseUrl}/trips/my-trips/${tripId}/reservations?userId=${userId}&tripId=${tripId}`;
+        const data = {
+            method: 'get',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            credentials: 'include',
+        };
+        return fetch(url, data)
+            .then(res => res.json())
+            .catch(err => console.log(err, 'getreservations-service'));
     }
 };
 

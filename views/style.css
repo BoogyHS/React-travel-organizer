@@ -7,6 +7,7 @@
 @import url('forms.css');
 @import url('cards.css');
 @import url('home.css');
+@import url('trip-details.css');
 
 body {
     max-width: 1366px;

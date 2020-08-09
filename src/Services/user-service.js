@@ -22,7 +22,7 @@ const userService = {
         return fetch(url, data)
             // .then(statusHandler)
             .then(res => res.json())
-            .catch(err => console.error(err));
+            // .catch(err => console.error(err));
     },
     login: function (bodyData, url = `${baseUrl}/users/login`) {
         const data = {
@@ -36,7 +36,7 @@ const userService = {
         return fetch(url, data)
             // .then(statusHandler)
             .then(res => res.json())
-            .catch(err => console.error(err, 'here'));
+            // .catch(err => console.error(err, 'here'));
     },
     logout: function (url = `${baseUrl}/users/logout`) {
         const data = {

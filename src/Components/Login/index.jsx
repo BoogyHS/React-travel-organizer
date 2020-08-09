@@ -24,7 +24,7 @@ function Login(props) {
         }
         userService.login(data)
             .then(res => {
-                if (res.username) {
+                if (res && res.username) {
                     setUser(res);
                     props.history.push('/');
                 } else {

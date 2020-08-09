@@ -16,6 +16,7 @@ import NewTrip from '../NewTrip';
 import HotelForm from '../Hotel';
 import FlightForm from '../Flight';
 import TripsWrapper from '../TripsWrapper';
+import ReservationsWrapper from '../ReservationsWrapper';
 
 //context
 import userContext from '../../Contexts/UserContext'
@@ -71,6 +72,7 @@ function App() {
                 <Route path="/hotel-form" component={HotelForm} />
                 <Route path="/flight-form" component={FlightForm} />
                 <Route path="/my-trips" exact component={TripsWrapper} />
+                <Route path="/my-trips/:id/reservations" component={ReservationsWrapper} />
                 <Route path="/my-trips/:id" component={TripDetails} />
                 <Route path="*" component={NotFound} />
               </Switch>

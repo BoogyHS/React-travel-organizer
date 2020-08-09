@@ -1,19 +1,13 @@
 import React from 'react'
-import FormWrapper from '../common/FormWrapper'
+
+import styles from './style.module.css'
 
 function TripDetails() {
     return (
-        <FormWrapper>
-        <div>details</div>
-        <div>details</div>
-        <div>details</div>
-        <div>details</div>
-        <div>details</div>
-        <div>details</div>
-        <div>details</div>
-        <div>details</div>
-        <div>details</div>
-        </FormWrapper>
+        <div className={styles["wrapper-border"]}>
+            <h3>Детайли за пътуването</h3>
+
+        </div>
     )
 }
 
