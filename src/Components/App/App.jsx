@@ -69,8 +69,8 @@ function App() {
                 <Route path="/logout" component={Logout} />
                 <Route path="/new-trip" component={NewTrip} />
                 <Route path="/statistics" component={Home} />
-                <Route path="/hotel-form" component={HotelForm} />
-                <Route path="/flight-form" component={FlightForm} />
+                <Route path="/add-hotel" component={HotelForm} />
+                <Route path="/add-flight" component={FlightForm} />
                 <Route path="/my-trips" exact component={TripsWrapper} />
                 <Route path="/my-trips/:id/reservations" component={ReservationsWrapper} />
                 <Route path="/my-trips/:id" component={TripDetails} />

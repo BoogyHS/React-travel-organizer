@@ -13,6 +13,19 @@
     margin-top: 1rem;
 }
 
+.reservations-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.reservations-wrapper a:first-child {
+    margin-bottom: 0;
+}
+
+.reservations-wrapper a+a {
+    margin-top: 0;
+}
+
 .card {
     display: flex;
     padding: 1rem 1.8rem 1rem 1rem;
@@ -28,9 +41,9 @@
     text-align: center;
 }
 
-.cards a:first-child {
+/* .cards a:first-child {
     margin-bottom: 1rem;
-}
+} */
 
 .cards div:first-child {
     width: 100%;

@@ -21,6 +21,7 @@ function TripsWrapper() {
     useEffect(() => {
         tripService.getTrips(user._id)
             .then(trips => {
+                console.log(trips)
                 setTrips(trips);
             })
             .catch(err => console.log(err))
@@ -29,7 +30,7 @@ function TripsWrapper() {
     return (
         <div>
             <h2 className={styles["responsive-width"]}>Моите Дестинации</h2>
-            
+
             <div className={styles.cards}>
                 <Link to="/new-trip" className={styles.card}>
                     <div>
@@ -42,7 +43,6 @@ function TripsWrapper() {
                             <Link to={`/my-trips/${trip._id}/reservations`} key={trip._id}>
                                 <Card trip={trip}></Card>
                             </Link>)}
-                        
                     </div>
                     : <Loader></Loader>
                 }
