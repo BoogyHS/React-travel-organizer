@@ -8,13 +8,15 @@ import FormButton from '../common/FormButton'
 import userService from '../../Services/user-service'
 
 //contexts
-import userContext from '../../Contexts/UserContext/index'
+import userContext from '../../Contexts/UserContext'
+import notificationContext from '../../Contexts/NotificationsContext'
 
 function Login(props) {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [, setUser] = useContext(userContext);
+    const [, setNotification] = useContext(notificationContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,12 +28,21 @@ function Login(props) {
             .then(res => {
                 if (res && res.username) {
                     setUser(res);
+                    setNotification({ success: "Login Successful" });
+                    setTimeout(() => {
+                        setNotification(null);
+                    }, 3000);
                     props.history.push('/');
                 } else {
                     throw new Error(res.message)
                 }
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                setNotification({ error: err.message || "Something went wrong" });
+                setTimeout(() => {
+                    setNotification(null);
+                }, 3000);
+            })
     }
 
     return (

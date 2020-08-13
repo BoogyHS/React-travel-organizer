@@ -21,6 +21,7 @@ import TestComponent from '../testComponent'
 
 //context
 import userContext from '../../Contexts/UserContext'
+import notificationsContext from '../../Contexts/NotificationsContext'
 
 //services
 import userService from '../../Services/user-service';
@@ -29,7 +30,10 @@ import NotFound from '../common/NotFound';
 
 function App() {
   const [user, setUser] = useState(undefined);
+  const [notification, setNotification] = useState(null);
   const [isLoading, setLoading] = useState(true);
+  // const notification = { error: "something went wrong", success: "sucessfull" }
+  // const notification = null
 
   useEffect(() => {
     userService.confirmUser()
@@ -58,29 +62,35 @@ function App() {
 
     return (
       <userContext.Provider value={[user, setUser]}>
-        <BrowserRouter>
-          <Header />
-          <div className={styles["wrapper"]}>
-            <main>
-              <Switch>
-                <Route path="/" exact><Redirect to="/home" /></Route>
-                <Route path="/home" component={Home} />
-                <Route path="/register" component={Register} />
-                <Route path="/login" component={Login} />
-                <Route path="/logout" component={Logout} />
-                <Route path="/new-trip" component={NewTrip} />
-                <Route path="/statistics" component={TestComponent} />
-                <Route path="/add-hotel" component={HotelForm} />
-                <Route path="/add-flight" component={FlightForm} />
-                <Route path="/my-trips" exact component={TripsWrapper} />
-                <Route path="/my-trips/:id/reservations" component={ReservationsWrapper} />
-                <Route path="/my-trips/:id" component={TripDetails} />
-                <Route path="*" component={NotFound} />
-              </Switch>
-            </main>
+        <notificationsContext.Provider value={[notification, setNotification]}>
+          <div>
+            {notification && notification.error && <p className={`${styles.error} ${styles.notification}`} >{notification.error}</p>}
+            {notification && notification.success && <p className={`${styles.success} ${styles.notification}`}>{notification.success}</p>}
           </div>
-          <Footer />
-        </BrowserRouter>
+          <BrowserRouter>
+            <Header />
+            <div className={styles["wrapper"]}>
+              <main>
+                <Switch>
+                  <Route path="/" exact><Redirect to="/home" /></Route>
+                  <Route path="/home" component={Home} />
+                  <Route path="/register" component={Register} />
+                  <Route path="/login" component={Login} />
+                  <Route path="/logout" component={Logout} />
+                  <Route path="/new-trip" component={NewTrip} />
+                  <Route path="/statistics" component={TestComponent} />
+                  <Route path="/add-hotel" component={HotelForm} />
+                  <Route path="/add-flight" component={FlightForm} />
+                  <Route path="/my-trips" exact component={TripsWrapper} />
+                  <Route path="/my-trips/:id/reservations" component={ReservationsWrapper} />
+                  <Route path="/my-trips/:id" component={TripDetails} />
+                  <Route path="*" component={NotFound} />
+                </Switch>
+              </main>
+            </div>
+            <Footer />
+          </BrowserRouter>
+        </notificationsContext.Provider>
       </userContext.Provider>
     );
   }

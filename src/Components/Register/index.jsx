@@ -8,11 +8,13 @@ import FormButton from '../common/FormButton'
 //services
 import userService from '../../Services/user-service'
 
-// context 
+//context 
 import userContext from '../../Contexts/UserContext'
+import notificationContext from '../../Contexts/NotificationsContext';
 
 function Register(props) {
     const [, setUser] = useContext(userContext);
+    const [, setNotification] = useContext(notificationContext);
 
     const { register, handleSubmit, watch, errors } = useForm();
     const onSubmit = data => {
@@ -20,12 +22,21 @@ function Register(props) {
             .then(res => {
                 if (res.username) {
                     setUser(res); 
+                    setNotification({ success: "Register Successful" });
+                    setTimeout(() => {
+                        setNotification(null);
+                    }, 3000);
                     props.history.push('/');
                 } else {
                     throw new Error(res.message);
                 }
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                setNotification({error: err.message || "Something went wrong"});
+                setTimeout(() => {
+                    setNotification(null);
+                }, 5000);
+            })
     };
 
     return (
