@@ -5,7 +5,7 @@ import FormButton from '../common/FormButton'
 import countryService from '../../Services/country-service'
 
 function Test() {
-    // const handleSubmit = () => { countryService.addCountries()}
+    // const handleSubmit = (ev) => { ev.preventDefault(); countryService.addCountries()}
     const handleSubmit = (ev) => { 
         ev.preventDefault()
         countryService.getCountries()

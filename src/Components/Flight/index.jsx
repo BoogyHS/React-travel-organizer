@@ -13,7 +13,7 @@ import flightService from '../../Services/flight-service';
 //contexts
 import userContext from '../../Contexts/UserContext';
 
-function FlightForm() {
+function FlightForm(props) {
     const { register, handleSubmit, errors } = useForm();
     const [user,] = useContext(userContext);
     const [trips, setTrips] = useState(null);
@@ -23,7 +23,8 @@ function FlightForm() {
         // console.log(data["date-time"])
         flightService.addFlight(data)
         .then(res=>{
-            console.log(res);
+            props.history.push('/my-trips');
+            // console.log(res);
         })
     };
 

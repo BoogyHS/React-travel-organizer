@@ -20,9 +20,9 @@ function Header(props) {
                 {user && <li><Link to="/profile">{user.username}</Link></li>}
                 {!user && <li><Link to="/register">Регистрация</Link></li>}
                 {!user && <li><Link to="/login">Вход</Link></li>}
+                {user && <li><Link to="/my-trips">Моите дестинации</Link></li>}
                 {user && <li><Link to="/logout">Изход</Link></li>}
-                {user && <li><Link to="/new-trip">Ново пътуване</Link></li>}
-                {user && <li><Link to="/statistics">Статистика</Link></li>}
+                {/*{user && <li><Link to="/statistics">Статистика</Link></li>}*/}
             </ul>
         </header>
     )

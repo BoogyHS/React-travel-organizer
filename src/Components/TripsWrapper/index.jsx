@@ -3,7 +3,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import styles from './style.module.css'
 
 //components
-import Card from '../common/Card'
+import Card from '../common/TripCard'
 import Loader from '../common/Loader'
 import Link from '../common/Link'
 

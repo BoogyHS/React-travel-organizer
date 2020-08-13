@@ -14,7 +14,7 @@ import hotelService from '../../Services/hotel-service';
 //contexts
 import userContext from '../../Contexts/UserContext';
 
-function HotelForm() {
+function HotelForm(props) {
     const { register, handleSubmit, errors } = useForm();
     const [user,] = useContext(userContext);
     const [trips, setTrips] = useState(null);
@@ -23,7 +23,8 @@ function HotelForm() {
     const onSubmit = data => {
         hotelService.addHotel(data)
         .then(res=>{
-            console.log(res);
+            // console.log(res);
+            props.history.push('/my-trips');
         })
     };
 

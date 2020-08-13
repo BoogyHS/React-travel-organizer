@@ -10,8 +10,8 @@ import userContext from '../../Contexts/UserContext'
 
 function Home(props) {
 
-    const [user, ] = useContext(userContext);
-    
+    const [user,] = useContext(userContext);
+
     if (user) {
         return (
             <div className={styles["home-card-wrapper"]}>
@@ -25,11 +25,11 @@ function Home(props) {
                         <h2>Моите дестинации</h2>
                     </div>
                 </Link>
-                <Link to="/statistics" className={`${styles["home-card"]} ${styles["card"]}`}>
+                {/*<Link to="/statistics" className={`${styles["home-card"]} ${styles["card"]}`}>
                     <div>
                         <h2>Статистика</h2>
                     </div>
-                </Link>
+                </Link>*/}
             </div>
         )
     } else {
