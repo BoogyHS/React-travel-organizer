@@ -9,7 +9,7 @@ import TextArea from '../common/TextArea'
 //services
 import tripService from '../../Services/trip-service';
 import countryService from '../../Services/country-service';
-// import hotelService from '../../Services/hotel-service';
+import hotelService from '../../Services/hotel-service';
 
 //contexts
 import userContext from '../../Contexts/UserContext';
@@ -21,7 +21,10 @@ function HotelForm() {
     const [countries, setCountries] = useState(null);
 
     const onSubmit = data => {
-        console.log(data);
+        hotelService.addHotel(data)
+        .then(res=>{
+            console.log(res);
+        })
     };
 
     useEffect(() => {
@@ -65,7 +68,7 @@ function HotelForm() {
                     >
                         {countries
                             ? countries.map((country) =>
-                                <option value={`${country._id}`} key={`${country._id}`}>{country.name}</option>)
+                                <option value={`${country.name}`} key={`${country._id}`}>{country.name}</option>)
                             : <option value="default">default</option>
                         }
                     </select>

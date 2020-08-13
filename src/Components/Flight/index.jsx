@@ -8,7 +8,7 @@ import TextArea from '../common/TextArea'
 
 //services
 import tripService from '../../Services/trip-service';
-// import flightService from '../../Services/flight-service';
+import flightService from '../../Services/flight-service';
 
 //contexts
 import userContext from '../../Contexts/UserContext';
@@ -19,7 +19,12 @@ function FlightForm() {
     const [trips, setTrips] = useState(null);
 
     const onSubmit = data => {
-        console.log(data);
+
+        // console.log(data["date-time"])
+        flightService.addFlight(data)
+        .then(res=>{
+            console.log(res);
+        })
     };
 
     useEffect(() => {
@@ -49,23 +54,23 @@ function FlightForm() {
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="from">От</label>
+                    <label htmlFor="departure">От</label>
                     <input 
                     type="text" 
-                    id="from" 
-                    name="from"
+                    id="departure" 
+                    name="departure"
                     spellCheck="false" 
                     placeholder="Sofia" 
                     ref={register({ required: true })}
                     />
-                    {errors.from && <p>This field is required</p>}
+                    {errors.departure && <p>This field is required</p>}
                 </div>
                 <div>
-                    <label htmlFor="to">До</label>
+                    <label htmlFor="destination">До</label>
                     <input 
                     type="text" 
-                    id="to" 
-                    name="to"
+                    id="destination" 
+                    name="destination"
                     spellCheck="false" 
                     placeholder="Berlin Schoenefeld" 
                     ref={register({ required: true })}

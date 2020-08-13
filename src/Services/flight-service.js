@@ -1,8 +1,8 @@
 import { baseUrl } from '../constants.js'
 
-const hotelService = {
+const flightService = {
 
-    addHotel: function (bodyData, url = `${baseUrl}/trips/add-hotel`) {
+    addFlight: function (bodyData, url = `${baseUrl}/trips/add-flight`) {
 
         const data = {
             method: 'post',
@@ -14,8 +14,8 @@ const hotelService = {
         };
         return fetch(url, data)
             .then(res => res.json())
-            .catch(err => console.log(err, 'addhotel-service'));
+            .catch(err => console.log(err, 'addFlight-service'));
     }
 };
 
-export default hotelService;
+export default flightService;
