@@ -2,16 +2,18 @@ import React from 'react'
 
 import styles from './style.module.css'
 
+import hotelImg from '../../../images/hotel.png'
+import planeImg from '../../../images/plane.png'
+
 function Card(props) {
 
-    const {type} = props;
-    const imgName = type === 'hotel' ? 'src/images/hotel.png' : './src/images/plane.png';
-
-    console.log(props)
+    const { type } = props.reservation;
+    const img = type === 'hotel' ? hotelImg : planeImg;
+    
     return (
         <div className={`${styles.card} ${styles["reservations-cards"]}`}>
             <div className={styles["card-left-part"]}>
-                <img src="src/images/hotel.png"
+                <img src={img}
                     alt="" />
             </div>
             <div className={styles["card-middle-part"]}>
