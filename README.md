@@ -9,10 +9,10 @@ The back-end is also open sourced. It is used Express.js for the back-end. You c
 ## Technology stack
 Main languages & libraries :
 
-React
-Webpack
-react-router-dom
-react-hook-form
+* React
+* Webpack
+* react-router-dom
+* react-hook-form
 
 ## Routing
 Route | Description | Old page
