@@ -1,3 +1,35 @@
+# React Travel Organizer
+
+The application code is open. You can use the application on this web site: https://react-travel-organizer.herokuapp.com/home
+
+## The back-end for this application
+
+The back-end is also open sourced. It is used Express.js for the back-end. You can find the repository here: https://github.com/BoogyHS/REST-api
+
+## Technology stack
+Main languages & libraries :
+
+React
+Webpack
+react-router-dom
+react-hook-form
+
+## Routing
+Route | Description | Old page
+------|-------------|---------
+/ | Home page | https://react-travel-organizer.herokuapp.com/home/
+/register | Register page with | https://react-travel-organizer.herokuapp.com/register
+/login | Login page with | https://react-travel-organizer.herokuapp.com/login
+/new-trip | New trip form page with | https://react-travel-organizer.herokuapp.com/new-trip
+/my-trips | Page for all trips with | https://react-travel-organizer.herokuapp.com/my-trips
+/my-trips/:id/reservations | Page for all reservations for a trip with | https://react-travel-organizer.herokuapp.com/my-trips/5f32f97ff60c7b00176e7917/reservations
+/add-hotel | Add hotel form with | https://react-travel-organizer.herokuapp.com/add-hotel
+/add-flight | Add flight form with | https://react-travel-organizer.herokuapp.com/add-flight
+/profile | Page for user details with | https://react-travel-organizer.herokuapp.com/profile
+/logout | Loging out route with | https://react-travel-organizer.herokuapp.com/logout
+
+
+### Other
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
