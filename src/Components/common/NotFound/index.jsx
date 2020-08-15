@@ -1,8 +1,10 @@
 import React from 'react'
 
+import styles from './style.module.css'
+
 function NotFound(){
      return (
-        <div>NOT FOUND</div>
+        <div className={styles["not-found"]}>NOT FOUND :(</div>
     )
 }
 

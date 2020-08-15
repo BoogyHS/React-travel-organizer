@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { useForm } from "react-hook-form";
 
+import styles from './style.module.css'
+
 //components
 import FormWrapper from '../common/FormWrapper'
 import FormButton from '../common/FormButton'
@@ -64,7 +66,7 @@ function Register(props) {
                         placeholder="boogy.hs@gmail.com"
                         ref={register({ required: true })}
                     />
-                    {errors.email && <p>This field is required</p>}
+                    {errors.email && <p className={styles.err}>This field is required</p>}
                 </div>
                 <div>
                     <label htmlFor="username">Потребителско име</label>
@@ -78,10 +80,10 @@ function Register(props) {
                     />
                     {errors.username
                         && errors.username.type === "required"
-                        && <p>This field is required</p>}
+                        && <p className={styles.err}>This field is required</p>}
                     {errors.username
                         && errors.username.type === "minLength"
-                        && <p>Username must be at least 5 characters</p>}
+                        && <p className={styles.err}>Username must be at least 5 characters</p>}
                 </div>
                 <div>
                     <label htmlFor="password">Парола</label>
@@ -94,10 +96,10 @@ function Register(props) {
                     />
                     {errors.password
                         && errors.password.type === "required"
-                        && <p>This field is required</p>}
+                        && <p className={styles.err}>This field is required</p>}
                     {errors.password
                         && errors.password.type === "minLength"
-                        && <p>Password must be at least 5 characters</p>}
+                        && <p className={styles.err}>Password must be at least 5 characters</p>}
                 </div>
                 <div>
                     <label htmlFor="repeat-password">Повторете паролата</label>
@@ -112,7 +114,7 @@ function Register(props) {
                             }
                         })}
                     />
-                    {errors['repeat-password'] && <p>Password doesn't match</p>}
+                    {errors['repeat-password'] && <p className={styles.err}>Password doesn't match</p>}
                 </div>
                 <div>
                     <label></label>

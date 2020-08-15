@@ -27,6 +27,7 @@ import notificationsContext from '../../Contexts/NotificationsContext'
 import userService from '../../Services/user-service';
 import TripDetails from '../TripDetails';
 import NotFound from '../common/NotFound';
+import Profile from '../Profile';
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -77,13 +78,14 @@ function App() {
                   <Route path="/register" component={Register} />
                   <Route path="/login" component={Login} />
                   <Route path="/logout" component={Logout} />
-                  <Route path="/new-trip" component={NewTrip} />
+                  {user && <Route path="/profile" component={Profile} />}
+                  {user && <Route path="/new-trip" component={NewTrip} />}
                   {/*<Route path="/statistics" component={TestComponent} />*/}
-                  <Route path="/add-hotel" component={HotelForm} />
-                  <Route path="/add-flight" component={FlightForm} />
-                  <Route path="/my-trips" exact component={TripsWrapper} />
-                  <Route path="/my-trips/:id/reservations" component={ReservationsWrapper} />
-                  <Route path="/my-trips/:id" component={TripDetails} />
+                  {user &&<Route path="/add-hotel" component={HotelForm} />}
+                  {user && <Route path="/add-flight" component={FlightForm} />}
+                  {user && <Route path="/my-trips" exact component={TripsWrapper} />}
+                  {user && <Route path="/my-trips/:id/reservations" component={ReservationsWrapper} />}
+                  {user && <Route path="/my-trips/:id" component={TripDetails} />}
                   <Route path="*" component={NotFound} />
                 </Switch>
               </main>
