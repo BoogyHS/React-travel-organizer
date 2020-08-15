@@ -20,11 +20,6 @@
     display: block;
 }
 
-.flex{
-    display: flex;
-    justify-content: start;
-}
-
 .flex p {
     display: inline-block;
     padding-bottom: 0;
