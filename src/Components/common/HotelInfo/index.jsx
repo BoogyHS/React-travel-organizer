@@ -11,9 +11,9 @@ function HotelInfo({props}) {
 
     return (
         <div className={styles["card-middle-part"]}>
-            <h3> <span>{name}</span> in <span>{city}</span> - {country}</h3>
+            <h3> <span>{name}</span> в <span>{city}</span> - {country}</h3>
             {<h4 className={styles["card-hotel-name"]}> </h4>}
-            <p> Check In: <b>{checkIn}</b> Check Out: <b>{checkOut}</b></p>
+            <p> Настаняване: <b>{checkIn}</b> Заминаване: <b>{checkOut}</b></p>
         </div>
     )
 }

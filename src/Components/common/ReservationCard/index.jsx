@@ -25,7 +25,7 @@ function Card(props) {
                 : <FlightInfo props={{...props}}></FlightInfo>
             }
             <div className={styles["card-right-part"]}>
-                <p>Price: <span>{props.reservation.price}</span> &euro;</p>
+                <p>Цена: <span>{props.reservation.price}</span> &euro;</p>
             </div>
         </div>
     )

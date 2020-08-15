@@ -18,12 +18,14 @@ function Reservations(props) {
     const [user,] = useContext(userContext);
     const [hotels, setHotels] = useState(null);
     const [flights, setFlights] = useState(null);
+    const [tripName, setTripName] = useState(null);
 
     const tripId = props.match.params.id;
 
     useEffect(() => {
         tripService.getReservations(user._id, tripId)
             .then(reservations => {
+                setTripName(reservations.name);
                 setHotels(reservations.hotels);
                 setFlights(reservations.flights);
                 // console.log(reservations, 'reservations component')
@@ -34,7 +36,7 @@ function Reservations(props) {
 
     return (
         <div>
-            <h2 className={styles["responsive-width"]}>Резервации</h2>
+            <h2 className={styles["responsive-width"]}>Дестинация: {tripName}</h2>
             <div className={styles.cards}>
                 <div className={styles["reservations-wrapper"]}>
                     <Link to="/add-hotel" className={styles.card}>
@@ -52,7 +54,7 @@ function Reservations(props) {
                 {hotels
                     ? <div >
                         {hotels.map((hotel) =>
-                            <ReservationCard reservation={hotel}  key={hotel._id}></ReservationCard>
+                            <ReservationCard reservation={hotel} key={hotel._id}></ReservationCard>
                         )}
                     </div>
                     : <Loader></Loader>
