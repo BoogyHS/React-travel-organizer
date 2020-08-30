@@ -1,3 +1,5 @@
+//REFACTORING NEEDED
+
 import React, { useContext } from 'react'
 import { useForm } from "react-hook-form";
 
@@ -7,22 +9,38 @@ import FormButton from '../common/FormButton'
 
 //context
 import UserContext from '../../Contexts/UserContext'
+import notificationContext from '../../Contexts/NotificationsContext'
 
 //services
 import tripService from '../../Services/trip-service'
 
 function NewTrip(props) {
 
-    const [user, ] = useContext(UserContext)
+    const [user,] = useContext(UserContext);
+    const [, setNotification] = useContext(notificationContext);
 
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
         data = { userId: user._id, ...data }
         tripService.newTrip(data)
-            .then(x => {
-                console.log(x);
-                props.history.push('/');
+            .then(res => {
+                if (res.status === 400) {
+                    return res.json();
+                } else {
+                    setNotification({ success: "New trip created successful" });
+                    setTimeout(() => {
+                        setNotification(null);
+                    }, 3000);
+                    props.history.push('/');
+                }
             })
+            .then(res => {
+                setNotification({ error: res.message || "Something went wrong" });
+                setTimeout(() => {
+                    setNotification(null);
+                }, 3000);
+            })
+            .catch(console.log)
     };
 
     return (

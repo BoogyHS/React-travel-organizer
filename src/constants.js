@@ -1,11 +1,11 @@
 const prod = {
     url: {
-        BASE_URL: 'https://rest-api-react-project.herokuapp.com/api'
+        SERVER_URL: 'https://rest-api-react-project.herokuapp.com/api'
     }
 }
 const dev = {
     url: {
-        BASE_URL: 'http://localhost:3300/api'
+        SERVER_URL: 'http://localhost:3300/api'
     }
 };
-export const baseUrl = process.env.NODE_ENV === 'development' ? dev.url.BASE_URL : prod.url.BASE_URL;
+export const serverUrl = process.env.NODE_ENV === 'development' ? dev.url.SERVER_URL : prod.url.SERVER_URL;

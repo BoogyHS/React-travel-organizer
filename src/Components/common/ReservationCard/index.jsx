@@ -1,3 +1,5 @@
+//REFACTORING NEEDED
+
 import React from 'react'
 
 import styles from './style.module.css'
@@ -21,8 +23,8 @@ function Card(props) {
                     alt="" />
             </div>
             {type === 'hotel'
-                ? <HotelInfo props={{...props}}></HotelInfo>
-                : <FlightInfo props={{...props}}></FlightInfo>
+                ? <HotelInfo props={{ ...props }}></HotelInfo>
+                : <FlightInfo props={{ ...props }}></FlightInfo>
             }
             <div className={styles["card-right-part"]}>
                 <p>Цена: <span>{props.reservation.price}</span> &euro;</p>

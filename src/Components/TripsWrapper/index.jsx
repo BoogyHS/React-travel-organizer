@@ -1,3 +1,5 @@
+//REFACTORING NEEDED
+
 import React, { useContext, useState, useEffect } from 'react'
 
 import styles from './style.module.css'
@@ -44,7 +46,7 @@ function TripsWrapper() {
                                 <Card trip={trip}></Card>
                             </Link>)}
                     </div>
-                    : <Loader></Loader>
+                    : <Loader />
                 }
             </div>
         </div>

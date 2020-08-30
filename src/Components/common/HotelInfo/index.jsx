@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './style.module.css'
 
-function HotelInfo({props}) {
+function HotelInfo({ props }) {
 
     const name = props.reservation["hotel-name"];
     const checkIn = props.reservation["check-in"];

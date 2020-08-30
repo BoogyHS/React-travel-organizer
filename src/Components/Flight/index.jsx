@@ -1,3 +1,5 @@
+//REFACTORING NEEDED
+
 import React, { useContext, useState, useEffect } from 'react'
 import { useForm } from "react-hook-form";
 
@@ -22,10 +24,10 @@ function FlightForm(props) {
 
         // console.log(data["date-time"])
         flightService.addFlight(data)
-        .then(res=>{
-            props.history.push('/my-trips');
-            // console.log(res);
-        })
+            .then(res => {
+                props.history.push('/my-trips');
+                // console.log(res);
+            })
     };
 
     useEffect(() => {
@@ -42,10 +44,10 @@ function FlightForm(props) {
             <form id="flight-form" onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <label htmlFor="tripId">Дестинация</label>
-                    <select 
-                    id="tripId" 
-                    name="tripId"
-                    ref={register({ required: true })}
+                    <select
+                        id="tripId"
+                        name="tripId"
+                        ref={register({ required: true })}
                     >
                         {trips
                             ? trips.map((trip) =>
@@ -56,51 +58,51 @@ function FlightForm(props) {
                 </div>
                 <div>
                     <label htmlFor="departure">От</label>
-                    <input 
-                    type="text" 
-                    id="departure" 
-                    name="departure"
-                    spellCheck="false" 
-                    placeholder="Sofia" 
-                    ref={register({ required: true })}
+                    <input
+                        type="text"
+                        id="departure"
+                        name="departure"
+                        spellCheck="false"
+                        placeholder="Sofia"
+                        ref={register({ required: true })}
                     />
                     {errors.departure && <p>This field is required</p>}
                 </div>
                 <div>
                     <label htmlFor="destination">До</label>
-                    <input 
-                    type="text" 
-                    id="destination" 
-                    name="destination"
-                    spellCheck="false" 
-                    placeholder="Berlin Schoenefeld" 
-                    ref={register({ required: true })}
+                    <input
+                        type="text"
+                        id="destination"
+                        name="destination"
+                        spellCheck="false"
+                        placeholder="Berlin Schoenefeld"
+                        ref={register({ required: true })}
                     />
                 </div>
                 <div>
                     <label htmlFor="date-time">Излитане</label>
-                    <input 
-                    type="datetime-local" 
-                    id="date-time"
-                    name="date-time" 
-                    ref={register({ required: true })}
+                    <input
+                        type="datetime-local"
+                        id="date-time"
+                        name="date-time"
+                        ref={register({ required: true })}
                     />
                 </div>
                 <div>
                     <label htmlFor="price">Цена</label>
-                    <input 
-                    type="number" 
-                    id="price" 
-                    name="price"
-                    min="0" 
-                    ref={register}
+                    <input
+                        type="number"
+                        id="price"
+                        name="price"
+                        min="0"
+                        ref={register}
                     />
                 </div>
-                <TextArea 
-                id="notes" 
-                name="notes"
-                labelText="Бележки"
-                register={register}
+                <TextArea
+                    id="notes"
+                    name="notes"
+                    labelText="Бележки"
+                    register={register}
                 ></TextArea>
                 <div>
                     <label></label>

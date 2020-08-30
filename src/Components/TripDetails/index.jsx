@@ -6,7 +6,6 @@ function TripDetails() {
     return (
         <div className={styles["wrapper-border"]}>
             <h3>Детайли за пътуването</h3>
-
         </div>
     )
 }

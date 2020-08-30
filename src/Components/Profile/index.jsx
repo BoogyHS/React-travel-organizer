@@ -12,8 +12,6 @@ function Profile() {
         .reduce((acc, curr) => { return acc.concat(curr.name); }, [])
         .join(' ');
 
-    console.log(user)
-
     return (
         <div className={styles.profile}>
             <img src={userImg} alt="default user" />
@@ -33,7 +31,7 @@ function Profile() {
             <div className={styles.flex}>
                 <p>Trips: </p>
                 <p><b>{userTripsNames}</b></p>
-                </div>
+            </div>
         </div>
     )
 }

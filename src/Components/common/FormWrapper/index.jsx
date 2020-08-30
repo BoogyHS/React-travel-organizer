@@ -2,10 +2,10 @@ import React from 'react'
 
 import styles from './style.module.css'
 
-function FormWrapper({children}){
+function FormWrapper({ children }) {
     return (
         <div className={styles["wrapper-form"]}>
-        {children}
+            {children}
         </div>
     )
 }

@@ -9,8 +9,8 @@ import Link from '../Link'
 import userContext from '../../../Contexts/UserContext/index'
 
 function Header(props) {
-    const [user, ] = useContext(userContext);
-    
+    const [user,] = useContext(userContext);
+
     return (
         <header className={styles.header}>
             <input className={styles["menu-btn"]} type="checkbox" id="menu-btn" />

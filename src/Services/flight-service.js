@@ -1,8 +1,10 @@
-import { baseUrl } from '../constants.js'
+//REFACTORING NEEDED
+
+import { serverUrl } from '../constants.js'
 
 const flightService = {
 
-    addFlight: function (bodyData, url = `${baseUrl}/trips/add-flight`) {
+    addFlight: function (bodyData, url = `${serverUrl}/trips/add-flight`) {
 
         const data = {
             method: 'post',

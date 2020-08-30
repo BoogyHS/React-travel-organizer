@@ -1,12 +1,10 @@
-// const baseUrl = 'https://rest-api-react-project.herokuapp.com/api/trips';
-// const baseUrl = 'http://localhost:3300/api/trips';
-import { baseUrl } from '../constants.js'
+//REFACTORING NEEDED
 
-// baseUrl = baseUrl + '/trips'
+import { serverUrl } from '../constants.js'
 
 const tripService = {
 
-    newTrip: function (bodyData, url = `${baseUrl}/trips/new-trip`) {
+    newTrip: function (bodyData, url = `${serverUrl}/trips/new-trip`) {
 
         const data = {
             method: 'post',
@@ -17,11 +15,11 @@ const tripService = {
             body: JSON.stringify(bodyData),
         };
         return fetch(url, data)
-            .then(res => res.json())
-            .catch(err => console.log(err, 'new-trip-service'));
+        // .then(res => res.json())
+        // .catch(err => console.log(err, 'new-trip-service'));
     },
     getTrips: function (userId) {
-        const url = `${baseUrl}/trips/my-trips?userId=${userId}`;
+        const url = `${serverUrl}/trips/my-trips?userId=${userId}`;
         const data = {
             method: 'get',
             headers: {
@@ -34,7 +32,7 @@ const tripService = {
             .catch(err => console.log(err, 'gettrips-service'));
     },
     getReservations: function (userId, tripId) {
-        const url = `${baseUrl}/trips/my-trips/${tripId}/reservations?userId=${userId}&tripId=${tripId}`;
+        const url = `${serverUrl}/trips/my-trips/${tripId}/reservations?userId=${userId}&tripId=${tripId}`;
         const data = {
             method: 'get',
             headers: {

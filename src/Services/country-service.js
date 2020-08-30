@@ -1,14 +1,12 @@
-// const baseUrl = 'https://rest-api-react-project.herokuapp.com/api/trips';
-// const baseUrl = 'http://localhost:3300/api/trips';
-import { baseUrl } from '../constants.js'
+//REFACTORING NEEDED - Role to be added, for admin only to upload countries
 
-// baseUrl = baseUrl + '/trips'
+import { serverUrl } from '../constants.js'
 
 const countryService = {
 
     // USED ONLY ONCE BY INIT THE COUNTRIESDATABASE 
     
-    // addCountries: function (bodyData = {}, url = `${baseUrl}/countries/allCountries`) {
+    // addCountries: function (bodyData = {}, url = `${serverUrl}/countries/allCountries`) {
 
     //     const data = {
     //         method: 'post',
@@ -22,13 +20,11 @@ const countryService = {
     //         .then(res => res.json())
     //         .catch(err => console.log(err, 'test-service'));
     // },
-    getCountries: function (url = `${baseUrl}/countries/allCountries`) {
+    getCountries: function (url = `${serverUrl}/countries/allCountries`) {
         return fetch(url)
             .then(res => res.json())
             .catch(err => console.log(err));
     }
-
-
 };
 
 export default countryService;

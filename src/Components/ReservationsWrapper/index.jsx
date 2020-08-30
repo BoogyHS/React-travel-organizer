@@ -1,3 +1,5 @@
+//REFACTORING NEEDED
+
 import React, { useContext, useEffect, useState } from 'react'
 
 import styles from './style.module.css'
@@ -54,7 +56,7 @@ function Reservations(props) {
                 {hotels
                     ? <div >
                         {hotels.map((hotel) =>
-                            <ReservationCard reservation={hotel} key={hotel._id}></ReservationCard>
+                            <ReservationCard reservation={hotel} key={hotel._id} />
                         )}
                     </div>
                     : <Loader></Loader>
@@ -62,10 +64,10 @@ function Reservations(props) {
                 {flights
                     ? <div >
                         {flights.map((flight) =>
-                            <ReservationCard reservation={flight} key={flight._id}></ReservationCard>
+                            <ReservationCard reservation={flight} key={flight._id} />
                         )}
                     </div>
-                    : <Loader></Loader>
+                    : <Loader />
                 }
             </div>
         </div>

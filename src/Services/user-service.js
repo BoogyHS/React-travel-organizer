@@ -1,15 +1,10 @@
-// import statusHandler from '../utils/response-status-handler';
+//REFACTORING NEEDED
 
-// const baseUrl = 'https://rest-api-react-project.herokuapp.com/api/users';
-// const baseUrl = 'http://localhost:3300/api/users';
-
-import { baseUrl } from '../constants'
-
-// baseUrl = baseUrl + '/users'
+import { serverUrl } from '../constants'
 
 const userService = {
 
-    register: function (bodyData, url = `${baseUrl}/users/register`) {
+    register: function (bodyData, url = `${serverUrl}/users/register`) {
 
         const data = {
             method: 'post',
@@ -22,9 +17,9 @@ const userService = {
         return fetch(url, data)
             // .then(statusHandler)
             .then(res => res.json())
-            // .catch(err => console.error(err));
+        // .catch(err => console.error(err));
     },
-    login: function (bodyData, url = `${baseUrl}/users/login`) {
+    login: function (bodyData, url = `${serverUrl}/users/login`) {
         const data = {
             method: 'post',
             headers: {
@@ -36,9 +31,9 @@ const userService = {
         return fetch(url, data)
             // .then(statusHandler)
             .then(res => res.json())
-            // .catch(err => console.error(err, 'here'));
+        // .catch(err => console.error(err, 'here'));
     },
-    logout: function (url = `${baseUrl}/users/logout`) {
+    logout: function (url = `${serverUrl}/users/logout`) {
         const data = {
             method: 'post',
             headers: {
@@ -51,7 +46,7 @@ const userService = {
             .then(res => res.json())
             .catch(err => console.log(err));
     },
-    confirmUser: function (url = `${baseUrl}/users/confirm-user`) {
+    confirmUser: function (url = `${serverUrl}/users/confirm-user`) {
         const data = {
             method: 'get',
             headers: {
@@ -112,7 +107,5 @@ const userService = {
     // },
 
 };
-
-// testService.load('http://localhost:4200/api/users/register')
 
 export default userService;

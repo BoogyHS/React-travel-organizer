@@ -1,3 +1,5 @@
+//REFACTORING NEEDED
+
 import React, { useContext } from 'react'
 import { useForm } from "react-hook-form";
 
@@ -23,7 +25,7 @@ function Register(props) {
         userService.register(data)
             .then(res => {
                 if (res.username) {
-                    setUser(res); 
+                    setUser(res);
                     setNotification({ success: "Register Successful" });
                     setTimeout(() => {
                         setNotification(null);
@@ -34,7 +36,7 @@ function Register(props) {
                 }
             })
             .catch(err => {
-                setNotification({error: err.message || "Something went wrong"});
+                setNotification({ error: err.message || "Something went wrong" });
                 setTimeout(() => {
                     setNotification(null);
                 }, 5000);

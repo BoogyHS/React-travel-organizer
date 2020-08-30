@@ -7,7 +7,9 @@ function Link({ children, to, className }) {
     className = className ? className : "";
 
     return (
-        <ReactRouterDomLink to={to} className={` ${styles.a} ${className}`}>{children}</ReactRouterDomLink>
+        <ReactRouterDomLink to={to} className={` ${styles.a} ${className}`}>
+            {children}
+        </ReactRouterDomLink>
     )
 };
 

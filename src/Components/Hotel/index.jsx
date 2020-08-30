@@ -1,3 +1,5 @@
+//REFACTORING NEEDED
+
 import React, { useContext, useState, useEffect } from 'react'
 import { useForm } from "react-hook-form";
 
@@ -22,10 +24,10 @@ function HotelForm(props) {
 
     const onSubmit = data => {
         hotelService.addHotel(data)
-        .then(res=>{
-            // console.log(res);
-            props.history.push('/my-trips');
-        })
+            .then(res => {
+                // console.log(res);
+                props.history.push('/my-trips');
+            })
     };
 
     useEffect(() => {
@@ -36,7 +38,7 @@ function HotelForm(props) {
             .catch(err => console.log(err));
 
         countryService.getCountries()
-            .then(countries => { 
+            .then(countries => {
                 setCountries(countries);
             })
             .catch(err => console.log(err));
