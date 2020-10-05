@@ -7,7 +7,6 @@ function FlightInfo({ props }) {
     const date = props.reservation["date-time"].split("T")[0];
     const time = props.reservation["date-time"].split("T")[1];
 
-    console.log(props)
     return (
         <div className={styles["card-middle-part"]}>
             <h3>От: <span>{departure}</span> - До: <span>{destination}</span></h3>

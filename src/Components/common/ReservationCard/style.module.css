@@ -56,6 +56,20 @@
     flex-basis: 25%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: flex-end;
+}
+
+.icon-wrapper {
+    text-align: right;
+    font-size: 1.5rem;
+}
+
+.icon-wrapper i:hover{
+    cursor: pointer;
+    color: blue;
+}
+
+.icon-wrapper i+i {
+    padding-left: 1rem;
 }

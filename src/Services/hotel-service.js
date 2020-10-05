@@ -17,6 +17,12 @@ const hotelService = {
         return fetch(url, data)
             .then(res => res.json())
             .catch(err => console.log(err, 'addhotel-service'));
+    },
+    del: function(id, url=''){
+        console.log(id);
+    },
+    edit: function(id, url=''){
+        console.log(id);
     }
 };
 
