@@ -46,10 +46,10 @@ function HotelForm(props) {
 
     return (
         <FormWrapper>
-            <h3>Добави хотел</h3>
+            <h3>Add hotel</h3>
             <form id="hotel-form" onSubmit={handleSubmit(onSubmit)}>
                 <div>
-                    <label htmlFor="tripId">Дестинация</label>
+                    <label htmlFor="tripId">Destination</label>
                     <select
                         id="tripId"
                         name="tripId"
@@ -63,7 +63,7 @@ function HotelForm(props) {
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="country">Държава</label>
+                    <label htmlFor="country">Country</label>
                     <select
                         id="country"
                         name="country"
@@ -78,7 +78,7 @@ function HotelForm(props) {
                     {errors.country && <p>This field is required</p>}
                 </div>
                 <div>
-                    <label htmlFor="city">Град</label>
+                    <label htmlFor="city">City</label>
                     <input
                         type="text"
                         id="city"
@@ -89,7 +89,7 @@ function HotelForm(props) {
                     />
                 </div>
                 <div>
-                    <label htmlFor="hotel-name">Име на хотел</label>
+                    <label htmlFor="hotel-name">Hotel name</label>
                     <input
                         type="text"
                         id="hotel-name"
@@ -100,7 +100,7 @@ function HotelForm(props) {
                     />
                 </div>
                 <div>
-                    <label htmlFor="check-in">Настаняване</label>
+                    <label htmlFor="check-in">Check-in</label>
                     <input
                         type="date"
                         id="check-in"
@@ -109,7 +109,7 @@ function HotelForm(props) {
                     />
                 </div>
                 <div>
-                    <label htmlFor="check-out">Напускане</label>
+                    <label htmlFor="check-out">Check-out</label>
                     <input
                         type="date"
                         id="check-out"
@@ -118,7 +118,7 @@ function HotelForm(props) {
                     />
                 </div>
                 <div>
-                    <label htmlFor="price">Цена</label>
+                    <label htmlFor="price">Price</label>
                     <input
                         type="number"
                         id="price"
@@ -130,12 +130,12 @@ function HotelForm(props) {
                 <TextArea
                     id="notes"
                     name="notes"
-                    labelText="Бележки"
+                    labelText="Notes"
                     register={register}
                 ></TextArea>
                 <div>
                     <label></label>
-                    <FormButton value="Запази" id="hotel-button"></FormButton>
+                    <FormButton value="Save" id="hotel-button"></FormButton>
                 </div>
             </form>
         </FormWrapper>

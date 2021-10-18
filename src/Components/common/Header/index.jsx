@@ -16,12 +16,12 @@ function Header(props) {
             <input className={styles["menu-btn"]} type="checkbox" id="menu-btn" />
             <label className={styles["menu-icon"]} htmlFor="menu-btn"><span className={styles.navicon}></span></label>
             <ul className={styles.menu}>
-                <li><Link to="/">Начало</Link></li>
+                <li><Link to="/">Home</Link></li>
                 {user && <li><Link to="/profile">{user.username}</Link></li>}
-                {!user && <li><Link to="/register">Регистрация</Link></li>}
-                {!user && <li><Link to="/login">Вход</Link></li>}
-                {user && <li><Link to="/my-trips">Моите дестинации</Link></li>}
-                {user && <li><Link to="/logout">Изход</Link></li>}
+                {!user && <li><Link to="/register">Register</Link></li>}
+                {!user && <li><Link to="/login">Login</Link></li>}
+                {user && <li><Link to="/my-trips">My destinations</Link></li>}
+                {user && <li><Link to="/logout">Logout</Link></li>}
                 {/*{user && <li><Link to="/statistics">Статистика</Link></li>}*/}
             </ul>
         </header>

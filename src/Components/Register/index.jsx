@@ -45,10 +45,10 @@ function Register(props) {
 
     return (
         <FormWrapper>
-            <h3>Направете регистрация</h3>
+            <h3>Register</h3>
             <form id="sign-form" onSubmit={handleSubmit(onSubmit)}>
                 <div>
-                    <label htmlFor="name">Име</label>
+                    <label htmlFor="name">Name</label>
                     <input
                         type="text"
                         id="name"
@@ -59,7 +59,7 @@ function Register(props) {
                     />
                 </div>
                 <div>
-                    <label htmlFor="email">Е-мейл</label>
+                    <label htmlFor="email">Email</label>
                     <input
                         type="text"
                         id="email"
@@ -71,7 +71,7 @@ function Register(props) {
                     {errors.email && <p className={styles.err}>This field is required</p>}
                 </div>
                 <div>
-                    <label htmlFor="username">Потребителско име</label>
+                    <label htmlFor="username">Username</label>
                     <input
                         type="text"
                         id="username"
@@ -88,7 +88,7 @@ function Register(props) {
                         && <p className={styles.err}>Username must be at least 5 characters</p>}
                 </div>
                 <div>
-                    <label htmlFor="password">Парола</label>
+                    <label htmlFor="password">Password</label>
                     <input
                         type="password"
                         id="password"
@@ -104,7 +104,7 @@ function Register(props) {
                         && <p className={styles.err}>Password must be at least 5 characters</p>}
                 </div>
                 <div>
-                    <label htmlFor="repeat-password">Повторете паролата</label>
+                    <label htmlFor="repeat-password">Repeat Password</label>
                     <input
                         type="password"
                         id="repeat-password"
@@ -120,7 +120,7 @@ function Register(props) {
                 </div>
                 <div>
                     <label></label>
-                    <FormButton value="Регистрация" id="register-button"></FormButton>
+                    <FormButton value="Register" id="register-button"></FormButton>
                 </div>
             </form>
         </FormWrapper>

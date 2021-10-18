@@ -13,10 +13,10 @@ function Card(props) {
             <div className={styles["card-middle-part"]}>
                 <h3> <span>{props.trip.name}</span> {!props.trip && <span></span>}</h3>
                 {!props.trip && <h4 className={styles["card-hotel-name"]}> </h4>}
-                <p> <b>Начало</b> <span>{props.trip.startDate}</span> <b>Край</b> <span>{props.trip.endDate}</span></p>
+                <p> <b>Start date</b> <span>{props.trip.startDate}</span> <b>End date</b> <span>{props.trip.endDate}</span></p>
             </div>
             <div className={styles["card-right-part"]}>
-                <p>Цена: <span>{props.trip.price}</span> &euro;</p>
+                <p>Price: <span>{props.trip.price}</span> &euro;</p>
             </div>
         </div>
     )

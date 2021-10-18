@@ -9,9 +9,9 @@ function FlightInfo({ props }) {
 
     return (
         <div className={styles["card-middle-part"]}>
-            <h3>От: <span>{departure}</span> - До: <span>{destination}</span></h3>
+            <h3>From: <span>{departure}</span> - To: <span>{destination}</span></h3>
             {<h4 className={styles["card-hotel-name"]}> </h4>}
-            <p>Дата:<b>{date}</b> в <b>{time}</b> местно време</p>
+            <p>Date:<b>{date}</b> at <b>{time}</b></p>
         </div>
     )
 }

@@ -45,7 +45,7 @@ function NewTrip(props) {
 
     return (
         <FormWrapper>
-            <h3>Нова дестинация</h3>
+            <h3>New trip</h3>
             <form id="new-trip-form" onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <label htmlFor="name">Име</label>
@@ -60,7 +60,7 @@ function NewTrip(props) {
                     {errors.name && <p>This field is required</p>}
                 </div>
                 <div>
-                    <label htmlFor="startDate">Дата на заминаване</label>
+                    <label htmlFor="startDate">Start date</label>
                     <input
                         type="date"
                         id="start-date"
@@ -70,7 +70,7 @@ function NewTrip(props) {
                     {errors.startDate && <p>This field is required</p>}
                 </div>
                 <div>
-                    <label htmlFor="endDate">Дата на връщане</label>
+                    <label htmlFor="endDate">End date</label>
                     <input
                         type="date"
                         id="end-date"
@@ -81,7 +81,7 @@ function NewTrip(props) {
                 </div>
                 <div>
                     <label></label>
-                    <FormButton value="Създай" id="new-trip-button"></FormButton>
+                    <FormButton value="Create" id="new-trip-button"></FormButton>
                 </div>
             </form>
         </FormWrapper>

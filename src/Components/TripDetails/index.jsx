@@ -5,7 +5,7 @@ import styles from './style.module.css'
 function TripDetails() {
     return (
         <div className={styles["wrapper-border"]}>
-            <h3>Детайли за пътуването</h3>
+            <h3>Trip Details</h3>
         </div>
     )
 }

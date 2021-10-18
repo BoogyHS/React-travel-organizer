@@ -17,12 +17,12 @@ function Home(props) {
             <div className={styles["home-card-wrapper"]}>
                 <Link to="/new-trip" className={`${styles["home-card"]} ${styles["card"]}`}>
                     <div>
-                        <h2>Нова дестинация</h2>
+                        <h2>Add new destination</h2>
                     </div>
                 </Link>
                 <Link to="/my-trips" className={`${styles["home-card"]} ${styles["card"]}`}>
                     <div>
-                        <h2>Моите дестинации</h2>
+                        <h2>My destinations</h2>
                     </div>
                 </Link>
                 {/*<Link to="/statistics" className={`${styles["home-card"]} ${styles["card"]}`}>

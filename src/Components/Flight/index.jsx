@@ -40,10 +40,10 @@ function FlightForm(props) {
 
     return (
         <FormWrapper>
-            <h3>Добави полет</h3>
+            <h3>Add flight</h3>
             <form id="flight-form" onSubmit={handleSubmit(onSubmit)}>
                 <div>
-                    <label htmlFor="tripId">Дестинация</label>
+                    <label htmlFor="tripId">Destination</label>
                     <select
                         id="tripId"
                         name="tripId"
@@ -57,7 +57,7 @@ function FlightForm(props) {
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="departure">От</label>
+                    <label htmlFor="departure">From</label>
                     <input
                         type="text"
                         id="departure"
@@ -69,7 +69,7 @@ function FlightForm(props) {
                     {errors.departure && <p>This field is required</p>}
                 </div>
                 <div>
-                    <label htmlFor="destination">До</label>
+                    <label htmlFor="destination">To</label>
                     <input
                         type="text"
                         id="destination"
@@ -80,7 +80,7 @@ function FlightForm(props) {
                     />
                 </div>
                 <div>
-                    <label htmlFor="date-time">Излитане</label>
+                    <label htmlFor="date-time">Date</label>
                     <input
                         type="datetime-local"
                         id="date-time"
@@ -89,7 +89,7 @@ function FlightForm(props) {
                     />
                 </div>
                 <div>
-                    <label htmlFor="price">Цена</label>
+                    <label htmlFor="price">Price</label>
                     <input
                         type="number"
                         id="price"
@@ -101,12 +101,12 @@ function FlightForm(props) {
                 <TextArea
                     id="notes"
                     name="notes"
-                    labelText="Бележки"
+                    labelText="Notes"
                     register={register}
                 ></TextArea>
                 <div>
                     <label></label>
-                    <FormButton value="Запази" id="flight-button"></FormButton>
+                    <FormButton value="Save" id="flight-button"></FormButton>
                 </div>
             </form>
         </FormWrapper>

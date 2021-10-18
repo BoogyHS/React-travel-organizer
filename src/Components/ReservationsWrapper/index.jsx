@@ -38,17 +38,17 @@ function Reservations(props) {
 
     return (
         <div>
-            <h2 className={styles["responsive-width"]}>Дестинация: {tripName}</h2>
+            <h2 className={styles["responsive-width"]}>Destination: {tripName}</h2>
             <div className={styles.cards}>
                 <div className={styles["reservations-wrapper"]}>
                     <Link to="/add-hotel" className={styles.card}>
                         <div>
-                            <h2>Добави Хотел</h2>
+                            <h2>Add hotel</h2>
                         </div>
                     </Link>
                     <Link to="/add-flight" className={styles.card}>
                         <div>
-                            <h2>Добави Полет</h2>
+                            <h2>Add flight</h2>
                         </div>
                     </Link>
                 </div>

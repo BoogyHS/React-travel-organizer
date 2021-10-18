@@ -49,10 +49,10 @@ function Login(props) {
 
     return (
         <FormWrapper>
-            <h3>Вход</h3>
+            <h3>Login</h3>
             <form id="sign-form" onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="username">Потребителско име</label>
+                    <label htmlFor="username">Username</label>
                     <input
                         type="text"
                         id="username"
@@ -63,7 +63,7 @@ function Login(props) {
                     />
                 </div>
                 <div>
-                    <label htmlFor="password">Парола</label>
+                    <label htmlFor="password">Password</label>
                     <input
                         type="password"
                         id="password"
@@ -73,7 +73,7 @@ function Login(props) {
                 </div>
                 <div>
                     <label></label>
-                    <FormButton value="Вход" id="login-button"></FormButton>
+                    <FormButton value="Login" id="login-button"></FormButton>
                 </div>
             </form>
         </FormWrapper>

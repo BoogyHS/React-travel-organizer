@@ -57,7 +57,7 @@ function Card(props) {
                     <i className="far fa-edit" onClick={() => editHandler(props.reservation._id, props.reservation.type)}></i>
                     <i className="far fa-trash-alt" onClick={() => deleteHandler(props.reservation._id, props.reservation.type)}></i>
                 </div>
-                <p>Цена: <span>{props.reservation.price}</span> &euro;</p>
+                <p>Price: <span>{props.reservation.price}</span> &euro;</p>
             </div>
         </div>
     )

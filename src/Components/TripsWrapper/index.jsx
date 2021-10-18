@@ -31,12 +31,12 @@ function TripsWrapper() {
 
     return (
         <div>
-            <h2 className={styles["responsive-width"]}>Моите Дестинации</h2>
+            <h2 className={styles["responsive-width"]}>My destinations</h2>
 
             <div className={styles.cards}>
                 <Link to="/new-trip" className={styles.card}>
                     <div>
-                        <h2>Нова дестинация</h2>
+                        <h2>Add new destination</h2>
                     </div>
                 </Link>
                 {trips

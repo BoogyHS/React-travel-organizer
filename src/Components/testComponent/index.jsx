@@ -14,7 +14,7 @@ function Test() {
     return (
         <form id="sign-form" onSubmit={handleSubmit}>
             <label></label>
-            <FormButton value="тест" id="login-button"></FormButton>
+            <FormButton value="test" id="login-button"></FormButton>
         </form>
     )
 }
