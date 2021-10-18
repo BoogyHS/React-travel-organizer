@@ -48,7 +48,7 @@ function NewTrip(props) {
             <h3>New trip</h3>
             <form id="new-trip-form" onSubmit={handleSubmit(onSubmit)}>
                 <div>
-                    <label htmlFor="name">Име</label>
+                    <label htmlFor="name">Name</label>
                     <input
                         type="text"
                         id="name"
