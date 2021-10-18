@@ -37,12 +37,12 @@ function Home(props) {
             <div className={styles["home-card-wrapper"]}>
                 <Link to="/register" className={`${styles["home-card"]} ${styles["card"]}`}>
                     <div>
-                        <h2>Регистрация</h2>
+                        <h2>Register</h2>
                     </div>
                 </Link>
                 <Link to="/login" className={`${styles["home-card"]} ${styles["card"]}`}>
                     <div>
-                        <h2>Вход</h2>
+                        <h2>Login</h2>
                     </div>
                 </Link>
             </div>
